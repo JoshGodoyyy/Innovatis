@@ -15,11 +15,13 @@ namespace Innovatis {
         }
 
         private void chk_numero_CheckedChanged(object sender, EventArgs e) {
-            
+            if(chk_numero.Checked) txt_numero.Enabled = false;
+            else txt_numero.Enabled = true;
         }
 
         private void chk_naoIncluso_CheckedChanged(object sender, EventArgs e) {
-            
+            if(chk_naoIncluso.Checked) txt_valorMaoDeObra.Enabled = false;
+            else txt_valorMaoDeObra.Enabled = true;
         }
     }
 }
