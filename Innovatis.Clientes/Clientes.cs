@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Innovatis {
+namespace Innovatis.Clientes {
     public partial class Clientes : Form {
         public Clientes() {
             InitializeComponent();

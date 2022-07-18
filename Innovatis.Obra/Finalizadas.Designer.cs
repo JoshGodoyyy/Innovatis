@@ -1,5 +1,5 @@
-﻿namespace Innovatis {
-    partial class ObrasConcluidas {
+﻿namespace Innovatis.Obra {
+    partial class Finalizadas {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,9 +23,18 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 178);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(300, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Abrir";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // listBox1
             // 
@@ -33,18 +42,9 @@
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(300, 160);
-            this.listBox1.TabIndex = 0;
+            this.listBox1.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 178);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(300, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Abrir";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // ObrasConcluidas
+            // Finalizadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -54,16 +54,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ObrasConcluidas";
+            this.Name = "Finalizadas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Obras Concluidas";
+            this.Text = "Finalizadas";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovatis", "Innovatis\Innovatis.csproj", "{3CD9E9BF-A123-4182-9F1E-68145AC9AFFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovatis.Clientes", "Innovatis.Clientes\Innovatis.Clientes.csproj", "{B59F4901-2C10-470E-B28A-514847C22B5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovatis.Obra", "Innovatis.Obra\Innovatis.Obra.csproj", "{41093D26-B774-46AA-8A27-A08C55E5B28E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3CD9E9BF-A123-4182-9F1E-68145AC9AFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD9E9BF-A123-4182-9F1E-68145AC9AFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD9E9BF-A123-4182-9F1E-68145AC9AFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B59F4901-2C10-470E-B28A-514847C22B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59F4901-2C10-470E-B28A-514847C22B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59F4901-2C10-470E-B28A-514847C22B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59F4901-2C10-470E-B28A-514847C22B5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41093D26-B774-46AA-8A27-A08C55E5B28E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41093D26-B774-46AA-8A27-A08C55E5B28E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41093D26-B774-46AA-8A27-A08C55E5B28E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41093D26-B774-46AA-8A27-A08C55E5B28E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

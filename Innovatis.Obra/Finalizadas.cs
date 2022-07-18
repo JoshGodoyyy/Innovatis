@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Innovatis {
-    public partial class ObrasConcluidas : Form {
-        public ObrasConcluidas() {
+namespace Innovatis.Obra {
+    public partial class Finalizadas : Form {
+        public Finalizadas() {
             InitializeComponent();
         }
     }

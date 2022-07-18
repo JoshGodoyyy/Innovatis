@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Innovatis {
-    public partial class Acompanhamento : Form {
-        public Acompanhamento() {
+namespace Innovatis.Obra {
+    public partial class Nova : Form {
+        public Nova() {
             InitializeComponent();
         }
     }

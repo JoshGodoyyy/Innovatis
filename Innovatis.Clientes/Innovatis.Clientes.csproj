@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3CD9E9BF-A123-4182-9F1E-68145AC9AFFF}</ProjectGuid>
+    <ProjectGuid>{B59F4901-2C10-470E-B28A-514847C22B5A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Innovatis</RootNamespace>
-    <AssemblyName>Innovatis</AssemblyName>
+    <RootNamespace>Innovatis.Clientes</RootNamespace>
+    <AssemblyName>Innovatis.Clientes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,9 +34,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -68,17 +65,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="Cadastro.cs" />
+    <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexao.cs" />
+    <Compile Include="Entity\Cliente.cs" />
+    <Compile Include="Novo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Novo.Designer.cs">
+      <DependentUpon>Novo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Novo.resx">
+      <DependentUpon>Novo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,7 +96,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -103,40 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Obra.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cliente.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Clientes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Nova obra.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Obras finalizadas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Innovatis.Clientes\Innovatis.Clientes.csproj">
-      <Project>{b59f4901-2c10-470e-b28a-514847c22b5a}</Project>
-      <Name>Innovatis.Clientes</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Innovatis.Obra\Innovatis.Obra.csproj">
-      <Project>{41093d26-b774-46aa-8a27-a08c55e5b28e}</Project>
-      <Name>Innovatis.Obra</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
