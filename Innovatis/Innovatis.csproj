@@ -127,6 +127,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\refresh.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Innovatis.Clientes\Innovatis.Clientes.csproj">

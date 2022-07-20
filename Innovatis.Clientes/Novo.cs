@@ -25,8 +25,7 @@ namespace Innovatis.Clientes {
                 CEP = txt_cep.Text,
                 UF = txt_uf.Text
             };
-            Cadastro cadastro = new Cadastro(cliente);
-            MessageBox.Show(cadastro.mensagem, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            Cadastro.InsertData(cliente);
             LimparCampos();
         }
 
