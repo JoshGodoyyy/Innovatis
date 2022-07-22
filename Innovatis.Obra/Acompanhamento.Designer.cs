@@ -23,119 +23,121 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_incluir = new System.Windows.Forms.Button();
+            this.txt_local = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_nota = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_valor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dt_data = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_descricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.list_historico = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.list_obras = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.obraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarObraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_remover = new System.Windows.Forms.Button();
+            this.btn_historico = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btn_editar
             // 
-            this.button2.Location = new System.Drawing.Point(473, 282);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Histórico";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_editar.Location = new System.Drawing.Point(267, 282);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(85, 23);
+            this.btn_editar.TabIndex = 8;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_incluir
             // 
-            this.button1.Location = new System.Drawing.Point(392, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Incluir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_incluir.Location = new System.Drawing.Point(186, 282);
+            this.btn_incluir.Name = "btn_incluir";
+            this.btn_incluir.Size = new System.Drawing.Size(75, 23);
+            this.btn_incluir.TabIndex = 7;
+            this.btn_incluir.Text = "Incluir";
+            this.btn_incluir.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txt_local
             // 
-            this.textBox4.Location = new System.Drawing.Point(218, 285);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(168, 20);
-            this.textBox4.TabIndex = 26;
+            this.txt_local.Location = new System.Drawing.Point(12, 285);
+            this.txt_local.Name = "txt_local";
+            this.txt_local.Size = new System.Drawing.Size(168, 20);
+            this.txt_local.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(218, 269);
+            this.label5.Location = new System.Drawing.Point(12, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 13);
             this.label5.TabIndex = 25;
             this.label5.Text = "Local de entrega:";
             // 
-            // textBox3
+            // txt_nota
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 285);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 24;
+            this.txt_nota.Location = new System.Drawing.Point(447, 246);
+            this.txt_nota.Name = "txt_nota";
+            this.txt_nota.Size = new System.Drawing.Size(111, 20);
+            this.txt_nota.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 269);
+            this.label4.Location = new System.Drawing.Point(447, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 23;
             this.label4.Text = "Nota:";
             // 
-            // textBox2
+            // txt_valor
             // 
-            this.textBox2.Location = new System.Drawing.Point(392, 246);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 20);
-            this.textBox2.TabIndex = 22;
+            this.txt_valor.Location = new System.Drawing.Point(322, 246);
+            this.txt_valor.Name = "txt_valor";
+            this.txt_valor.Size = new System.Drawing.Size(119, 20);
+            this.txt_valor.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, 230);
+            this.label3.Location = new System.Drawing.Point(322, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 21;
             this.label3.Text = "Valor:";
             // 
-            // dateTimePicker1
+            // dt_data
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(288, 246);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dt_data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_data.Location = new System.Drawing.Point(218, 246);
+            this.dt_data.Name = "dt_data";
+            this.dt_data.Size = new System.Drawing.Size(98, 20);
+            this.dt_data.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 230);
+            this.label2.Location = new System.Drawing.Point(218, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "Data:";
             // 
-            // textBox1
+            // txt_descricao
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 246);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(270, 20);
-            this.textBox1.TabIndex = 18;
+            this.txt_descricao.Location = new System.Drawing.Point(12, 246);
+            this.txt_descricao.Name = "txt_descricao";
+            this.txt_descricao.Size = new System.Drawing.Size(200, 20);
+            this.txt_descricao.TabIndex = 2;
             // 
             // label1
             // 
@@ -148,7 +150,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listBox2);
+            this.groupBox2.Controls.Add(this.list_historico);
             this.groupBox2.Location = new System.Drawing.Point(288, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(270, 200);
@@ -156,17 +158,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Histórico";
             // 
-            // listBox2
+            // list_historico
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 19);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(258, 173);
-            this.listBox2.TabIndex = 1;
+            this.list_historico.FormattingEnabled = true;
+            this.list_historico.Location = new System.Drawing.Point(6, 18);
+            this.list_historico.Name = "list_historico";
+            this.list_historico.Size = new System.Drawing.Size(258, 173);
+            this.list_historico.TabIndex = 1;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.list_obras);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 200);
@@ -174,13 +176,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Obras";
             // 
-            // listBox1
+            // list_obras
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(258, 173);
-            this.listBox1.TabIndex = 0;
+            this.list_obras.FormattingEnabled = true;
+            this.list_obras.Location = new System.Drawing.Point(6, 19);
+            this.list_obras.Name = "list_obras";
+            this.list_obras.Size = new System.Drawing.Size(258, 173);
+            this.list_obras.TabIndex = 0;
+            this.list_obras.SelectedIndexChanged += new System.EventHandler(this.list_obras_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -203,25 +206,45 @@
             // finalizarObraToolStripMenuItem
             // 
             this.finalizarObraToolStripMenuItem.Name = "finalizarObraToolStripMenuItem";
-            this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.finalizarObraToolStripMenuItem.Text = "Finalizar obra";
+            // 
+            // btn_remover
+            // 
+            this.btn_remover.Location = new System.Drawing.Point(358, 282);
+            this.btn_remover.Name = "btn_remover";
+            this.btn_remover.Size = new System.Drawing.Size(75, 23);
+            this.btn_remover.TabIndex = 9;
+            this.btn_remover.Text = "Remover";
+            this.btn_remover.UseVisualStyleBackColor = true;
+            // 
+            // btn_historico
+            // 
+            this.btn_historico.Location = new System.Drawing.Point(439, 282);
+            this.btn_historico.Name = "btn_historico";
+            this.btn_historico.Size = new System.Drawing.Size(119, 23);
+            this.btn_historico.TabIndex = 10;
+            this.btn_historico.Text = "Histórico";
+            this.btn_historico.UseVisualStyleBackColor = true;
             // 
             // Acompanhamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 317);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.btn_historico);
+            this.Controls.Add(this.btn_remover);
+            this.Controls.Add(this.btn_editar);
+            this.Controls.Add(this.btn_incluir);
+            this.Controls.Add(this.txt_local);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_nota);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_valor);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dt_data);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_descricao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -243,24 +266,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Button btn_incluir;
+        private System.Windows.Forms.TextBox txt_local;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_nota;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_valor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dt_data;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_descricao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox list_historico;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox list_obras;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem obraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem finalizarObraToolStripMenuItem;
+        private System.Windows.Forms.Button btn_remover;
+        private System.Windows.Forms.Button btn_historico;
     }
 }

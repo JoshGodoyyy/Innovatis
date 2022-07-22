@@ -4,7 +4,7 @@ using System.Data.SQLite;
 using System;
 
 namespace Innovatis.Clientes {
-    internal class Cadastro {
+    public class Cadastro {
         private static readonly string path = "Data Source=E:\\ws-vs2022\\Innovatis\\Innovatis\\db\\innovatis.db";
         private static SQLiteConnection connection;
         private static SQLiteCommand command;

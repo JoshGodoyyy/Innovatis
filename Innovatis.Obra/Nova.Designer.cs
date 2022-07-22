@@ -29,7 +29,7 @@
             this.dt_Inicio = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.btn_finalizar = new System.Windows.Forms.Button();
-            this.txt_valorMaoDeObra = new System.Windows.Forms.TextBox();
+            this.txt_valorMaterial = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_valorContrato = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,6 +61,7 @@
             this.chk_naoIncluso.TabIndex = 43;
             this.chk_naoIncluso.Text = "Não incluso";
             this.chk_naoIncluso.UseVisualStyleBackColor = true;
+            this.chk_naoIncluso.CheckedChanged += new System.EventHandler(this.chk_naoIncluso_CheckedChanged);
             // 
             // dt_final
             // 
@@ -102,15 +103,16 @@
             this.btn_finalizar.Name = "btn_finalizar";
             this.btn_finalizar.Size = new System.Drawing.Size(146, 23);
             this.btn_finalizar.TabIndex = 47;
-            this.btn_finalizar.Text = "Finalizar";
+            this.btn_finalizar.Text = "Salvar";
             this.btn_finalizar.UseVisualStyleBackColor = true;
+            this.btn_finalizar.Click += new System.EventHandler(this.btn_finalizar_Click);
             // 
-            // txt_valorMaoDeObra
+            // txt_valorMaterial
             // 
-            this.txt_valorMaoDeObra.Location = new System.Drawing.Point(168, 182);
-            this.txt_valorMaoDeObra.Name = "txt_valorMaoDeObra";
-            this.txt_valorMaoDeObra.Size = new System.Drawing.Size(150, 20);
-            this.txt_valorMaoDeObra.TabIndex = 42;
+            this.txt_valorMaterial.Location = new System.Drawing.Point(168, 182);
+            this.txt_valorMaterial.Name = "txt_valorMaterial";
+            this.txt_valorMaterial.Size = new System.Drawing.Size(150, 20);
+            this.txt_valorMaterial.TabIndex = 42;
             // 
             // label9
             // 
@@ -145,6 +147,7 @@
             this.btn_procurarContrato.TabIndex = 38;
             this.btn_procurarContrato.Text = "Selecionar";
             this.btn_procurarContrato.UseVisualStyleBackColor = true;
+            this.btn_procurarContrato.Click += new System.EventHandler(this.btn_procurarContrato_Click);
             // 
             // txt_contrato
             // 
@@ -170,6 +173,7 @@
             this.btn_clienteNaoCadastrado.TabIndex = 36;
             this.btn_clienteNaoCadastrado.Text = "Não Cadastrado";
             this.btn_clienteNaoCadastrado.UseVisualStyleBackColor = true;
+            this.btn_clienteNaoCadastrado.Click += new System.EventHandler(this.btn_clienteNaoCadastrado_Click);
             // 
             // cb_cliente
             // 
@@ -245,6 +249,7 @@
             this.chk_numero.TabIndex = 29;
             this.chk_numero.Text = "S/N";
             this.chk_numero.UseVisualStyleBackColor = true;
+            this.chk_numero.CheckedChanged += new System.EventHandler(this.chk_numero_CheckedChanged);
             // 
             // txt_numero
             // 
@@ -289,7 +294,7 @@
             this.Controls.Add(this.dt_Inicio);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_finalizar);
-            this.Controls.Add(this.txt_valorMaoDeObra);
+            this.Controls.Add(this.txt_valorMaterial);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_valorContrato);
             this.Controls.Add(this.label8);
@@ -329,7 +334,7 @@
         private System.Windows.Forms.DateTimePicker dt_Inicio;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btn_finalizar;
-        private System.Windows.Forms.TextBox txt_valorMaoDeObra;
+        private System.Windows.Forms.TextBox txt_valorMaterial;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_valorContrato;
         private System.Windows.Forms.Label label8;
