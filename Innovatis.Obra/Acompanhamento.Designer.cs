@@ -173,6 +173,7 @@
             this.list_obras.Name = "list_obras";
             this.list_obras.Size = new System.Drawing.Size(258, 173);
             this.list_obras.TabIndex = 0;
+            this.list_obras.SelectedIndexChanged += new System.EventHandler(this.list_obras_SelectedIndexChanged);
             // 
             // menuStrip1
             // 

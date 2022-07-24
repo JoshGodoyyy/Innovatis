@@ -79,6 +79,30 @@ namespace Innovatis.Obra {
             }
         }
 
+        public static List<Material> ListarMateriais(int id) {
+            using(connection = new SQLiteConnection(path)) {
+                List<Material> materiais = new List<Material>();
+                string cmd = "select * from historicos where id_obra = @id";
+                command = new SQLiteCommand(cmd, connection);
+                command.Parameters.AddWithValue("id", id);
+                connection.Open();
+                reader = command.ExecuteReader();
+                while(reader.Read()) {
+                    Material material = new Material() {
+                        Id = Convert.ToInt32(reader["id"]),
+                        IdObra = Convert.ToInt32(reader["id_obra"]),
+                        Descricao = Convert.ToString(reader["descricao"]),
+                        Data = Convert.ToDateTime(reader["data"]),
+                        Valor = Convert.ToDouble(reader["valor"]),
+                        Nota = Convert.ToString(reader["nota"]),
+                        LocalEntrega = Convert.ToString(reader["local_entrega"])
+                    };
+                    materiais.Add(material);
+                }
+                return materiais;
+            }
+        }
+
         public static void InserirMaterial(Material material) {
             using(connection = new SQLiteConnection(path)) {
                 connection.Open();
