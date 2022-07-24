@@ -2,6 +2,7 @@
 using System.Data.SQLite;
 using System.Collections.Generic;
 using Innovatis.Obra.Entity;
+using System.Data;
 
 namespace Innovatis.Obra {
     internal class Cadastro {
@@ -11,33 +12,6 @@ namespace Innovatis.Obra {
         private static SQLiteDataReader reader;
 
         #region Cadastro de Obras
-        public static List<Entity.Obra> LoadData() {
-            using(connection = new SQLiteConnection(path)) {
-                List<Entity.Obra> obras = new List<Entity.Obra>();
-                string cmd = "select * from obras";
-                command = new SQLiteCommand(cmd, connection);
-                connection.Open();
-                reader = command.ExecuteReader();
-                while(reader.Read()) {
-                    Entity.Obra obra = new Entity.Obra() {
-                        Id = Convert.ToInt32(reader["id"]),
-                        Logradouro = Convert.ToString(reader["logradouro"]),
-                        Numero = Convert.ToInt32(reader["numero"]),
-                        Bairro = Convert.ToString(reader["bairro"]),
-                        Cidade = Convert.ToString(reader["cidade"]),
-                        CEP = Convert.ToString(reader["cep"]),
-                        IdCliente = Convert.ToInt32(reader["id_cliente"]),
-                        ValorContrato = Convert.ToDouble(reader["valorcontrato"]),
-                        ValorMaterial = Convert.ToDouble(reader["valormaterial"]),
-                        DataInicio = Convert.ToDateTime(reader["datainicio"]),
-                        DataFinal = Convert.ToDateTime(reader["datafinal"])
-                    };
-                    obras.Add(obra);
-                }
-                return obras;
-            }
-        }
-
         public static void InsertData(Entity.Obra obra) {
             using(connection = new SQLiteConnection(path)) {
                 connection.Open();
@@ -60,9 +34,29 @@ namespace Innovatis.Obra {
         }
         #endregion
 
+        #region Obras finalizadas
+        public static List<Entity.Obra> ListarFinalizadas() {
+            using(connection = new SQLiteConnection(path)) {
+                List<Entity.Obra> obras = new List<Entity.Obra>();
+                string cmd = "select * from obras where finalizada = 1";
+                command = new SQLiteCommand(cmd, connection);
+                connection.Open();
+                reader = command.ExecuteReader();
+                while(reader.Read()) {
+                    Entity.Obra obra = new Entity.Obra() {
+                        Id = Convert.ToInt32(reader["id"]),
+                        Logradouro = Convert.ToString(reader["logradouro"]),
+                    };
+                    obras.Add(obra);
+                }
+                return obras;
+            }
+        }
+        #endregion
+
         #region Históricos
         public static List<Entity.Obra> ListarObras() {
-            using (connection = new SQLiteConnection(path)) {
+            using(connection = new SQLiteConnection(path)) {
                 List<Entity.Obra> obras = new List<Entity.Obra>();
                 string cmd = "select * from obras where finalizada = 0";
                 command = new SQLiteCommand(cmd, connection);
@@ -103,6 +97,19 @@ namespace Innovatis.Obra {
             }
         }
 
+        public static DataTable SelecionarMaterial(int id) {
+            using(connection = new SQLiteConnection(path)) {
+                DataTable material = new DataTable();
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "select * from historicos where id = @id";
+                command.Parameters.AddWithValue("id", id);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+                adapter.Fill(material);
+                return material;
+            }
+        }
+
         public static void InserirMaterial(Material material) {
             using(connection = new SQLiteConnection(path)) {
                 connection.Open();
@@ -114,6 +121,33 @@ namespace Innovatis.Obra {
                 command.Parameters.AddWithValue("valor", material.Valor);
                 command.Parameters.AddWithValue("nota", material.Nota);
                 command.Parameters.AddWithValue("local_entrega", material.LocalEntrega);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void EditarPedido(Material material) {
+            using(connection = new SQLiteConnection(path)) {
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "update historicos set descricao = @descricao, data = @data, valor = @valor, nota = @nota, local_entrega = @local_entrega where id = @id";
+                command.Parameters.AddWithValue("descricao", material.Descricao);
+                command.Parameters.AddWithValue("data", material.Data);
+                command.Parameters.AddWithValue("valor", material.Valor);
+                command.Parameters.AddWithValue("nota", material.Nota);
+                command.Parameters.AddWithValue("local_entrega", material.LocalEntrega);
+                command.Parameters.AddWithValue("id", material.Id);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void RemoverPedido(int id) {
+            using(connection = new SQLiteConnection(path)) {
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "delete from historicos where id = @id";
+                command.Parameters.AddWithValue("id", id);
 
                 command.ExecuteNonQuery();
             }

@@ -11,17 +11,22 @@ namespace Innovatis.Obra {
         }
 
         private void btn_incluir_Click(object sender, EventArgs e) {
-            Material material = new Material() {
-                IdObra = int.Parse(cb_obras.SelectedValue.ToString()),
-                Descricao = txt_descricao.Text,
-                Data = DateTime.Parse(dt_data.Text),
-                Valor = double.Parse(txt_valor.Text),
-                LocalEntrega = txt_localEntrega.Text
-            };
-            if(txt_nota.Text == null) material.Nota = "S/N";
-            else material.Nota = txt_nota.Text;
+            try {
+                Material material = new Material() {
+                    IdObra = int.Parse(cb_obras.SelectedValue.ToString()),
+                    Descricao = txt_descricao.Text,
+                    Data = DateTime.Parse(dt_data.Text),
+                    Valor = double.Parse(txt_valor.Text),
+                    LocalEntrega = txt_localEntrega.Text
+                };
+                if(txt_nota.Text == null) material.Nota = "S/N";
+                else material.Nota = txt_nota.Text;
 
-            Cadastro.InserirMaterial(material);
+                Cadastro.InserirMaterial(material);
+            } catch(Exception ex) {
+                MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LimparCampos();
         }
 
         private void Listar() {
@@ -36,6 +41,13 @@ namespace Innovatis.Obra {
             } catch(Exception ex) {
                 MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void LimparCampos() {
+            txt_descricao.Clear();
+            dt_data.Value = DateTime.Now;
+            txt_valor.Clear();
+            txt_localEntrega.Clear();
         }
     }
 }

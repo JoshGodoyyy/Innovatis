@@ -11,33 +11,41 @@ namespace Innovatis.Obra {
         }
 
         private void LoadClients() {
-            List<Cliente> clientes = new List<Cliente>();
-            clientes = Innovatis.Clientes.Cadastro.LoadData();
-            cb_cliente.DataSource = clientes;
-            cb_cliente.DisplayMember = "nome";
-            cb_cliente.ValueMember = "id";
+            try {
+                List<Cliente> clientes = new List<Cliente>();
+                clientes = Innovatis.Clientes.Cadastro.LoadData();
+                cb_cliente.DataSource = clientes;
+                cb_cliente.DisplayMember = "nome";
+                cb_cliente.ValueMember = "id";
+            } catch(Exception ex) {
+                MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_finalizar_Click(object sender, EventArgs e) {
-            Entity.Obra obra = new Entity.Obra() {
-                Logradouro = txt_logradouro.Text,
-                Bairro = txt_bairro.Text,
-                Cidade = txt_cidade.Text,
-                CEP = txt_cep.Text,
-                IdCliente = int.Parse(cb_cliente.SelectedValue.ToString()),
-                ValorContrato = double.Parse(txt_valorContrato.Text),
-                DataInicio = DateTime.Parse(dt_Inicio.Text),
-                DataFinal = DateTime.Parse(dt_final.Text),
-                Finalizada = false
-            };
+            try {
+                Entity.Obra obra = new Entity.Obra() {
+                    Logradouro = txt_logradouro.Text,
+                    Bairro = txt_bairro.Text,
+                    Cidade = txt_cidade.Text,
+                    CEP = txt_cep.Text,
+                    IdCliente = int.Parse(cb_cliente.SelectedValue.ToString()),
+                    ValorContrato = double.Parse(txt_valorContrato.Text),
+                    DataInicio = DateTime.Parse(dt_Inicio.Text),
+                    DataFinal = DateTime.Parse(dt_final.Text),
+                    Finalizada = false
+                };
 
-            if(chk_numero.Checked) obra.Numero = 0;
-            else obra.Numero = int.Parse(txt_numero.Text);
+                if(chk_numero.Checked) obra.Numero = 0;
+                else obra.Numero = int.Parse(txt_numero.Text);
 
-            if(chk_naoIncluso.Checked) obra.ValorMaterial = 0;
-            else double.Parse(txt_valorMaterial.Text);
+                if(chk_naoIncluso.Checked) obra.ValorMaterial = 0;
+                else double.Parse(txt_valorMaterial.Text);
 
-            Cadastro.InsertData(obra);
+                Cadastro.InsertData(obra);
+            } catch(Exception ex) {
+                MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LimparCampos();
         }
 

@@ -56,6 +56,7 @@
             this.btn_editar.TabIndex = 8;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // txt_local
             // 
@@ -155,6 +156,7 @@
             this.list_historico.Name = "list_historico";
             this.list_historico.Size = new System.Drawing.Size(258, 173);
             this.list_historico.TabIndex = 1;
+            this.list_historico.SelectedIndexChanged += new System.EventHandler(this.list_historico_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -207,6 +209,7 @@
             this.btn_remover.TabIndex = 9;
             this.btn_remover.Text = "Remover";
             this.btn_remover.UseVisualStyleBackColor = true;
+            this.btn_remover.Click += new System.EventHandler(this.btn_remover_Click);
             // 
             // btn_historico
             // 
@@ -216,6 +219,7 @@
             this.btn_historico.TabIndex = 10;
             this.btn_historico.Text = "Histórico";
             this.btn_historico.UseVisualStyleBackColor = true;
+            this.btn_historico.Click += new System.EventHandler(this.btn_historico_Click);
             // 
             // Acompanhamento
             // 

@@ -177,6 +177,7 @@
             // 
             // cb_cliente
             // 
+            this.cb_cliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_cliente.FormattingEnabled = true;
             this.cb_cliente.Location = new System.Drawing.Point(12, 103);
             this.cb_cliente.Name = "cb_cliente";
