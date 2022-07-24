@@ -44,5 +44,12 @@ namespace Innovatis {
             formOpenned.MdiParent = this;
             formOpenned.Show();
         }
+
+        private void btn_materiais_Click(object sender, EventArgs e) {
+            Form formOpenned = Application.OpenForms["Incluir"];
+            if(formOpenned == null) formOpenned = new Incluir();
+            formOpenned.MdiParent = this;
+            formOpenned.Show();
+        }
     }
 }

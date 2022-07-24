@@ -26,6 +26,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_novoCliente = new System.Windows.Forms.Button();
+            this.btn_materiais = new System.Windows.Forms.Button();
             this.btn_obrasEmAndamento = new System.Windows.Forms.Button();
             this.btn_obrasConcluidas = new System.Windows.Forms.Button();
             this.btn_clientes = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_novoCliente);
+            this.panel1.Controls.Add(this.btn_materiais);
             this.panel1.Controls.Add(this.btn_obrasEmAndamento);
             this.panel1.Controls.Add(this.btn_obrasConcluidas);
             this.panel1.Controls.Add(this.btn_clientes);
@@ -52,23 +54,36 @@
             // 
             this.btn_novoCliente.Image = global::Innovatis.Properties.Resources.Cliente;
             this.btn_novoCliente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_novoCliente.Location = new System.Drawing.Point(319, 3);
+            this.btn_novoCliente.Location = new System.Drawing.Point(419, 3);
             this.btn_novoCliente.Name = "btn_novoCliente";
             this.btn_novoCliente.Size = new System.Drawing.Size(94, 94);
-            this.btn_novoCliente.TabIndex = 3;
+            this.btn_novoCliente.TabIndex = 4;
             this.btn_novoCliente.Text = "Novo cliente";
             this.btn_novoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_novoCliente.UseVisualStyleBackColor = true;
             this.btn_novoCliente.Click += new System.EventHandler(this.btn_novoCliente_Click);
             // 
+            // btn_materiais
+            // 
+            this.btn_materiais.Image = global::Innovatis.Properties.Resources.Material;
+            this.btn_materiais.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_materiais.Location = new System.Drawing.Point(212, 3);
+            this.btn_materiais.Name = "btn_materiais";
+            this.btn_materiais.Size = new System.Drawing.Size(94, 94);
+            this.btn_materiais.TabIndex = 2;
+            this.btn_materiais.Text = "Pedido de material";
+            this.btn_materiais.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_materiais.UseVisualStyleBackColor = true;
+            this.btn_materiais.Click += new System.EventHandler(this.btn_materiais_Click);
+            // 
             // btn_obrasEmAndamento
             // 
             this.btn_obrasEmAndamento.Image = global::Innovatis.Properties.Resources.Obra;
             this.btn_obrasEmAndamento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_obrasEmAndamento.Location = new System.Drawing.Point(212, 3);
+            this.btn_obrasEmAndamento.Location = new System.Drawing.Point(312, 3);
             this.btn_obrasEmAndamento.Name = "btn_obrasEmAndamento";
             this.btn_obrasEmAndamento.Size = new System.Drawing.Size(94, 94);
-            this.btn_obrasEmAndamento.TabIndex = 2;
+            this.btn_obrasEmAndamento.TabIndex = 3;
             this.btn_obrasEmAndamento.Text = "Obras em andamento";
             this.btn_obrasEmAndamento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_obrasEmAndamento.UseVisualStyleBackColor = true;
@@ -91,10 +106,10 @@
             // 
             this.btn_clientes.Image = global::Innovatis.Properties.Resources.Clientes;
             this.btn_clientes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_clientes.Location = new System.Drawing.Point(419, 3);
+            this.btn_clientes.Location = new System.Drawing.Point(519, 3);
             this.btn_clientes.Name = "btn_clientes";
             this.btn_clientes.Size = new System.Drawing.Size(94, 94);
-            this.btn_clientes.TabIndex = 4;
+            this.btn_clientes.TabIndex = 5;
             this.btn_clientes.Text = "Clientes";
             this.btn_clientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_clientes.UseVisualStyleBackColor = true;
@@ -116,7 +131,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(312, 3);
+            this.panel2.Location = new System.Drawing.Point(412, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1, 94);
             this.panel2.TabIndex = 2;
@@ -151,6 +166,7 @@
         private System.Windows.Forms.Button btn_novoCliente;
         private System.Windows.Forms.Button btn_obrasEmAndamento;
         private System.Windows.Forms.Button btn_obrasConcluidas;
+        private System.Windows.Forms.Button btn_materiais;
     }
 }
 

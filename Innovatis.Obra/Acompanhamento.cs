@@ -12,17 +12,9 @@ namespace Innovatis.Obra {
             List<Entity.Obra> obras = new List<Entity.Obra>();
             obras = Cadastro.LoadData();
 
-            foreach(var i in obras) {
-                string num;
-                if(i.Numero == 0) num = "S/N";
-                else num = i.Numero.ToString();
-                list_obras.Items.Add(i.Logradouro + ", " + num);
-            }
-        }
-
-        private void list_obras_SelectedIndexChanged(object sender, System.EventArgs e) {
-            string m = list_historico.SelectedItems.ToString();
-            MessageBox.Show(m);
+            list_obras.DataSource = obras;
+            list_obras.DisplayMember = "logradouro";
+            list_obras.ValueMember = "id";
         }
     }
 }

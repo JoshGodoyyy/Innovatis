@@ -13,5 +13,6 @@ namespace Innovatis.Obra.Entity {
         public double ValorMaterial { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFinal { get; set; }
+        public bool Finalizada { get; set; }
     }
 }

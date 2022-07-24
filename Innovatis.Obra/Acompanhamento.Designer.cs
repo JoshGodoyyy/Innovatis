@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.btn_editar = new System.Windows.Forms.Button();
-            this.btn_incluir = new System.Windows.Forms.Button();
             this.txt_local = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_nota = new System.Windows.Forms.TextBox();
@@ -51,21 +50,12 @@
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(267, 282);
+            this.btn_editar.Location = new System.Drawing.Point(186, 282);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(85, 23);
             this.btn_editar.TabIndex = 8;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
-            // 
-            // btn_incluir
-            // 
-            this.btn_incluir.Location = new System.Drawing.Point(186, 282);
-            this.btn_incluir.Name = "btn_incluir";
-            this.btn_incluir.Size = new System.Drawing.Size(75, 23);
-            this.btn_incluir.TabIndex = 7;
-            this.btn_incluir.Text = "Incluir";
-            this.btn_incluir.UseVisualStyleBackColor = true;
             // 
             // txt_local
             // 
@@ -183,7 +173,6 @@
             this.list_obras.Name = "list_obras";
             this.list_obras.Size = new System.Drawing.Size(258, 173);
             this.list_obras.TabIndex = 0;
-            this.list_obras.SelectedIndexChanged += new System.EventHandler(this.list_obras_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -206,12 +195,12 @@
             // finalizarObraToolStripMenuItem
             // 
             this.finalizarObraToolStripMenuItem.Name = "finalizarObraToolStripMenuItem";
-            this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.finalizarObraToolStripMenuItem.Text = "Finalizar obra";
             // 
             // btn_remover
             // 
-            this.btn_remover.Location = new System.Drawing.Point(358, 282);
+            this.btn_remover.Location = new System.Drawing.Point(277, 282);
             this.btn_remover.Name = "btn_remover";
             this.btn_remover.Size = new System.Drawing.Size(75, 23);
             this.btn_remover.TabIndex = 9;
@@ -220,7 +209,7 @@
             // 
             // btn_historico
             // 
-            this.btn_historico.Location = new System.Drawing.Point(439, 282);
+            this.btn_historico.Location = new System.Drawing.Point(358, 282);
             this.btn_historico.Name = "btn_historico";
             this.btn_historico.Size = new System.Drawing.Size(119, 23);
             this.btn_historico.TabIndex = 10;
@@ -235,7 +224,6 @@
             this.Controls.Add(this.btn_historico);
             this.Controls.Add(this.btn_remover);
             this.Controls.Add(this.btn_editar);
-            this.Controls.Add(this.btn_incluir);
             this.Controls.Add(this.txt_local);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_nota);
@@ -267,7 +255,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_editar;
-        private System.Windows.Forms.Button btn_incluir;
         private System.Windows.Forms.TextBox txt_local;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_nota;

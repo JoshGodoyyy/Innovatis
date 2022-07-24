@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Collections.Generic;
+using Innovatis.Obra.Entity;
 
 namespace Innovatis.Obra {
     internal class Cadastro {
@@ -9,6 +10,7 @@ namespace Innovatis.Obra {
         private static SQLiteCommand command;
         private static SQLiteDataReader reader;
 
+        #region Cadastro de Obras
         public static List<Entity.Obra> LoadData() {
             using(connection = new SQLiteConnection(path)) {
                 List<Entity.Obra> obras = new List<Entity.Obra>();
@@ -40,7 +42,7 @@ namespace Innovatis.Obra {
             using(connection = new SQLiteConnection(path)) {
                 connection.Open();
                 command = connection.CreateCommand();
-                command.CommandText = "insert into obras (logradouro, numero, bairro, cidade, cep, id_cliente, valorcontrato, valormaterial, datainicio, datafinal) values (@logradouro, @numero, @bairro, @cidade, @cep, @id_cliente, @valorcontrato, @valormaterial, @datainicio, @datafinal)";
+                command.CommandText = "insert into obras (logradouro, numero, bairro, cidade, cep, id_cliente, valorcontrato, valormaterial, datainicio, datafinal, finalizada) values (@logradouro, @numero, @bairro, @cidade, @cep, @id_cliente, @valorcontrato, @valormaterial, @datainicio, @datafinal, @finalizada)";
                 command.Parameters.AddWithValue("logradouro", obra.Logradouro);
                 command.Parameters.AddWithValue("numero", obra.Numero);
                 command.Parameters.AddWithValue("bairro", obra.Bairro);
@@ -51,9 +53,47 @@ namespace Innovatis.Obra {
                 command.Parameters.AddWithValue("valormaterial", obra.ValorMaterial);
                 command.Parameters.AddWithValue("datainicio", obra.DataInicio);
                 command.Parameters.AddWithValue("datafinal", obra.DataFinal);
+                command.Parameters.AddWithValue("finalizada", obra.Finalizada);
 
                 command.ExecuteNonQuery();
             }
         }
+        #endregion
+
+        #region Históricos
+        public static List<Entity.Obra> ListarObras() {
+            using (connection = new SQLiteConnection(path)) {
+                List<Entity.Obra> obras = new List<Entity.Obra>();
+                string cmd = "select * from obras where finalizada = 0";
+                command = new SQLiteCommand(cmd, connection);
+                connection.Open();
+                reader = command.ExecuteReader();
+                while(reader.Read()) {
+                    Entity.Obra obra = new Entity.Obra() {
+                        Id = Convert.ToInt32(reader["id"]),
+                        Logradouro = Convert.ToString(reader["logradouro"]),
+                    };
+                    obras.Add(obra);
+                }
+                return obras;
+            }
+        }
+
+        public static void InserirMaterial(Material material) {
+            using(connection = new SQLiteConnection(path)) {
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "insert into historicos (id_obra, descricao, data, valor, nota, local_entrega) values (@id_obra, @descricao, @data, @valor, @nota, @local_entrega)";
+                command.Parameters.AddWithValue("id_obra", material.IdObra);
+                command.Parameters.AddWithValue("descricao", material.Descricao);
+                command.Parameters.AddWithValue("data", material.Data);
+                command.Parameters.AddWithValue("valor", material.Valor);
+                command.Parameters.AddWithValue("nota", material.Nota);
+                command.Parameters.AddWithValue("local_entrega", material.LocalEntrega);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        #endregion
     }
 }

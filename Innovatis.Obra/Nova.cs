@@ -33,7 +33,8 @@ namespace Innovatis.Obra {
                 IdCliente = int.Parse(cb_cliente.SelectedValue.ToString()),
                 ValorContrato = double.Parse(txt_valorContrato.Text),
                 DataInicio = DateTime.Parse(dt_Inicio.Text),
-                DataFinal = DateTime.Parse(dt_final.Text)
+                DataFinal = DateTime.Parse(dt_final.Text),
+                Finalizada = false
             };
 
             if(chk_numero.Checked) obra.Numero = 0;
