@@ -36,6 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cb_obras = new System.Windows.Forms.ComboBox();
             this.btn_incluir = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +52,7 @@
             // 
             this.txt_descricao.Location = new System.Drawing.Point(12, 25);
             this.txt_descricao.Name = "txt_descricao";
-            this.txt_descricao.Size = new System.Drawing.Size(250, 20);
+            this.txt_descricao.Size = new System.Drawing.Size(177, 20);
             this.txt_descricao.TabIndex = 1;
             // 
             // label2
@@ -148,11 +149,22 @@
             this.btn_incluir.UseVisualStyleBackColor = true;
             this.btn_incluir.Click += new System.EventHandler(this.btn_incluir_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(195, 27);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(67, 17);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "Medição";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Incluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 175);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btn_incluir);
             this.Controls.Add(this.cb_obras);
             this.Controls.Add(this.label6);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cb_obras;
         private System.Windows.Forms.Button btn_incluir;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

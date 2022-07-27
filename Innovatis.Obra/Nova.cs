@@ -40,7 +40,7 @@ namespace Innovatis.Obra {
                 else obra.Numero = int.Parse(txt_numero.Text);
 
                 if(chk_naoIncluso.Checked) obra.ValorMaterial = 0;
-                else double.Parse(txt_valorMaterial.Text);
+                else obra.ValorMaterial = double.Parse(txt_valorMaterial.Text);
 
                 Cadastro.InsertData(obra);
             } catch(Exception ex) {

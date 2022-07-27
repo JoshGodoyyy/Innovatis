@@ -73,6 +73,27 @@ namespace Innovatis.Obra {
             }
         }
 
+        public static List<Entity.Obra> ListarObrasById(int id) {
+            using(connection = new SQLiteConnection(path)) {
+                List<Entity.Obra> obras = new List<Entity.Obra>();
+                string cmd = "select * from obras where id = @id";
+                command = new SQLiteCommand(cmd, connection);
+                command.Parameters.AddWithValue("id", id);
+                connection.Open();
+                reader = command.ExecuteReader();
+                while(reader.Read()) {
+                    Entity.Obra obra = new Entity.Obra() {
+                        Logradouro = Convert.ToString(reader["logradouro"]),
+                        ValorContrato = Convert.ToDouble(reader["valorcontrato"]),
+                        ValorMaterial = Convert.ToDouble(reader["valormaterial"]),
+                        DataFinal = Convert.ToDateTime(reader["datafinal"])
+                    };
+                    obras.Add(obra);
+                }
+                return obras;
+            }
+        }
+
         public static List<Material> ListarMateriais(int id) {
             using(connection = new SQLiteConnection(path)) {
                 List<Material> materiais = new List<Material>();

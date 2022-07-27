@@ -102,6 +102,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Innovatis.Obra.Entity.Material.datasource" />
+    <None Include="Properties\DataSources\Innovatis.Obra.Entity.Obra.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

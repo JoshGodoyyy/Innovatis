@@ -47,6 +47,7 @@ namespace Innovatis.Obra {
             txt_descricao.Clear();
             dt_data.Value = DateTime.Now;
             txt_valor.Clear();
+            txt_nota.Clear();
             txt_localEntrega.Clear();
         }
     }

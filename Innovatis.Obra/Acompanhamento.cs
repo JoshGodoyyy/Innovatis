@@ -32,6 +32,32 @@ namespace Innovatis.Obra {
                     list_historico.DataSource = materiais;
                     list_historico.DisplayMember = "descricao";
                     list_historico.ValueMember = "id";
+
+                    List<Entity.Obra> obras = new List<Entity.Obra>();
+                    obras = Cadastro.ListarObrasById(int.Parse(list_obras.SelectedValue.ToString()));
+
+                    double valMO = 0;
+                    double valMat = 0;
+                    foreach(var item in obras) {
+                        valMO = item.ValorContrato;
+                        valMat = item.ValorMaterial;
+                        lbl_dataFinal.Text = item.DataFinal.ToString("dd/MM/yyyy");
+                    }
+
+                    lbl_moContratada.Text = valMO.ToString("N2");
+                    lbl_valorContratoMaterial.Text = valMat.ToString("N2");
+
+                    double sum = 0;
+
+                    foreach(var item in materiais) {
+                        sum += item.Valor;
+                    }
+
+                    lbl_valorPagoMateriais.Text = sum.ToString("N2");
+
+                    double res = valMat - sum;
+
+                    lbl_saldoMaterial.Text = res.ToString("N2");
                 } catch(Exception ex) {
                     MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -40,11 +66,11 @@ namespace Innovatis.Obra {
 
         private void list_historico_SelectedIndexChanged(object sender, EventArgs e) {
             var aux = list_historico.SelectedValue;
-            if (list_historico.SelectedValue != aux) {
+            if(list_historico.SelectedValue != aux) {
                 HabilitarCampos();
                 DataTable data = new DataTable();
                 data = Cadastro.SelecionarMaterial(int.Parse(list_historico.SelectedValue.ToString()));
-                
+
                 foreach(DataRow i in data.Rows) {
                     id = int.Parse(i["id"].ToString());
                     txt_descricao.Text = i["descricao"].ToString();
@@ -83,11 +109,6 @@ namespace Innovatis.Obra {
             }
             DesabilitarCampos();
         }
-
-        private void btn_historico_Click(object sender, EventArgs e) {
-
-        }
-
         private void HabilitarCampos() {
             txt_descricao.Enabled = true;
             txt_local.Enabled = true;
