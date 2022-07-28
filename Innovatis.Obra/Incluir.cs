@@ -50,5 +50,15 @@ namespace Innovatis.Obra {
             txt_nota.Clear();
             txt_localEntrega.Clear();
         }
+
+        private void chk_medicao_CheckedChanged(object sender, EventArgs e) {
+            if(chk_medicao.Checked) {
+                txt_descricao.Text = "Medição";
+                txt_descricao.Enabled = false;
+            } else {
+                txt_descricao.Clear();
+                txt_descricao.Enabled = true;
+            }
+        }
     }
 }

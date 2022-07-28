@@ -47,17 +47,25 @@ namespace Innovatis.Obra {
                     lbl_moContratada.Text = valMO.ToString("N2");
                     lbl_valorContratoMaterial.Text = valMat.ToString("N2");
 
-                    double sum = 0;
+                    double sumMO = 0;
+                    double sumMat = 0;
 
                     foreach(var item in materiais) {
-                        sum += item.Valor;
+                        if (item.Descricao == "Medição") {
+                            sumMO += item.Valor;
+                        } else {
+                            sumMat += item.Valor;
+                        }
                     }
 
-                    lbl_valorPagoMateriais.Text = sum.ToString("N2");
+                    lbl_moPaga.Text = sumMO.ToString("N2");
+                    lbl_valorPagoMateriais.Text = sumMat.ToString("N2");
 
-                    double res = valMat - sum;
+                    double resMO = valMO - sumMO;
+                    double resMat = valMat - sumMat;
 
-                    lbl_saldoMaterial.Text = res.ToString("N2");
+                    lbl_totalMO.Text = resMO.ToString("N2");
+                    lbl_saldoMaterial.Text = resMat.ToString("N2");
                 } catch(Exception ex) {
                     MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
