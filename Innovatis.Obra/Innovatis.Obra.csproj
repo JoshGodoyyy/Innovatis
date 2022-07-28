@@ -80,6 +80,12 @@
     <Compile Include="Acompanhamento.Designer.cs">
       <DependentUpon>Acompanhamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio.Designer.cs">
+      <DependentUpon>Relatorio.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Acompanhamento.resx">
       <DependentUpon>Acompanhamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +107,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Relatorio.resx">
+      <DependentUpon>Relatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Innovatis.Obra.Entity.Material.datasource" />
     <None Include="Properties\DataSources\Innovatis.Obra.Entity.Obra.datasource" />

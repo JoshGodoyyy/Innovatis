@@ -15,7 +15,7 @@ namespace Innovatis.Obra {
 
         private void Listar() {
             List<Entity.Obra> obras = new List<Entity.Obra>();
-            obras = Cadastro.ListarObras();
+            obras = Cadastro.ListarObras(0);
 
             list_obras.DataSource = obras;
             list_obras.DisplayMember = "logradouro";
@@ -144,6 +144,12 @@ namespace Innovatis.Obra {
             txt_nota.Clear();
             txt_valor.Clear();
             dt_data.Value = DateTime.Now;
+        }
+
+        private void finalizarObraToolStripMenuItem_Click(object sender, EventArgs e) {
+            DialogResult dialogResult = MessageBox.Show("Deseja mesmo marcar obra como finalizada?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes) Cadastro.FinalizarObra(int.Parse(list_obras.SelectedValue.ToString()), DateTime.Now);
+            Listar();
         }
     }
 }

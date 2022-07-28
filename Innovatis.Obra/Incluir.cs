@@ -32,7 +32,7 @@ namespace Innovatis.Obra {
         private void Listar() {
             try {
                 List<Entity.Obra> obras = new List<Entity.Obra>();
-                obras = Cadastro.ListarObras();
+                obras = Cadastro.ListarObras(0);
 
                 cb_obras.DataSource = obras;
                 cb_obras.ValueMember = "id";

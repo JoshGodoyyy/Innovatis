@@ -34,32 +34,13 @@ namespace Innovatis.Obra {
         }
         #endregion
 
-        #region Obras finalizadas
-        public static List<Entity.Obra> ListarFinalizadas() {
-            using(connection = new SQLiteConnection(path)) {
-                List<Entity.Obra> obras = new List<Entity.Obra>();
-                string cmd = "select * from obras where finalizada = 1";
-                command = new SQLiteCommand(cmd, connection);
-                connection.Open();
-                reader = command.ExecuteReader();
-                while(reader.Read()) {
-                    Entity.Obra obra = new Entity.Obra() {
-                        Id = Convert.ToInt32(reader["id"]),
-                        Logradouro = Convert.ToString(reader["logradouro"]),
-                    };
-                    obras.Add(obra);
-                }
-                return obras;
-            }
-        }
-        #endregion
-
         #region Históricos
-        public static List<Entity.Obra> ListarObras() {
+        public static List<Entity.Obra> ListarObras(int num) {
             using(connection = new SQLiteConnection(path)) {
                 List<Entity.Obra> obras = new List<Entity.Obra>();
-                string cmd = "select * from obras where finalizada = 0";
+                string cmd = "select * from obras where finalizada = @finalizada";
                 command = new SQLiteCommand(cmd, connection);
+                command.Parameters.AddWithValue("finalizada", num);
                 connection.Open();
                 reader = command.ExecuteReader();
                 while(reader.Read()) {
@@ -94,6 +75,33 @@ namespace Innovatis.Obra {
             }
         }
 
+        public static List<Entity.Obra> Relatorio(int id) {
+            using(connection = new SQLiteConnection(path)) {
+                List<Entity.Obra> obras = new List<Entity.Obra>();
+                string cmd = "select * from obras inner join clientes where obras.id = @id";
+                command = new SQLiteCommand(cmd, connection);
+                command.Parameters.AddWithValue("id", id);
+                connection.Open();
+                reader = command.ExecuteReader();
+                while(reader.Read()) {
+                    Entity.Obra obra = new Entity.Obra() {
+                        NomeCliente = Convert.ToString(reader["nome"]),
+                        Logradouro = Convert.ToString(reader["logradouro"]),
+                        Numero = Convert.ToInt32(reader["numero"]),
+                        Bairro = Convert.ToString(reader["bairro"]),
+                        Cidade = Convert.ToString(reader["cidade"]),
+                        ValorContrato = Convert.ToDouble(reader["valorcontrato"]),
+                        ValorMaterial = Convert.ToDouble(reader["valormaterial"]),
+                        DataInicio = Convert.ToDateTime(reader["datainicio"]),
+                        DataFinal = Convert.ToDateTime(reader["datafinal"]),
+                        DataEntrega = Convert.ToDateTime(reader["dataentrega"])
+                    };
+                    obras.Add(obra);
+                }
+                return obras;
+            }
+        }
+
         public static List<Material> ListarMateriais(int id) {
             using(connection = new SQLiteConnection(path)) {
                 List<Material> materiais = new List<Material>();
@@ -104,7 +112,6 @@ namespace Innovatis.Obra {
                 reader = command.ExecuteReader();
                 while(reader.Read()) {
                     Material material = new Material() {
-                        Id = Convert.ToInt32(reader["id"]),
                         IdObra = Convert.ToInt32(reader["id_obra"]),
                         Descricao = Convert.ToString(reader["descricao"]),
                         Data = Convert.ToDateTime(reader["data"]),
@@ -169,6 +176,18 @@ namespace Innovatis.Obra {
                 command = connection.CreateCommand();
                 command.CommandText = "delete from historicos where id = @id";
                 command.Parameters.AddWithValue("id", id);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void FinalizarObra(int id, DateTime date) {
+            using(connection = new SQLiteConnection(path)) {
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "update obras set finalizada = 1, dataentrega = @date where id = @id";
+                command.Parameters.AddWithValue("id", id);
+                command.Parameters.AddWithValue("date", date);
 
                 command.ExecuteNonQuery();
             }

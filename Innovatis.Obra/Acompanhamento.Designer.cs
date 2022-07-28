@@ -216,8 +216,9 @@
             // finalizarObraToolStripMenuItem
             // 
             this.finalizarObraToolStripMenuItem.Name = "finalizarObraToolStripMenuItem";
-            this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.finalizarObraToolStripMenuItem.Text = "Finalizar obra";
+            this.finalizarObraToolStripMenuItem.Click += new System.EventHandler(this.finalizarObraToolStripMenuItem_Click);
             // 
             // btn_remover
             // 

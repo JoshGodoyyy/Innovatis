@@ -35,6 +35,7 @@
             this.btn_relatorio.TabIndex = 3;
             this.btn_relatorio.Text = "Relatório";
             this.btn_relatorio.UseVisualStyleBackColor = true;
+            this.btn_relatorio.Click += new System.EventHandler(this.btn_relatorio_Click);
             // 
             // list_obras
             // 
@@ -43,7 +44,6 @@
             this.list_obras.Name = "list_obras";
             this.list_obras.Size = new System.Drawing.Size(300, 160);
             this.list_obras.TabIndex = 2;
-            this.list_obras.SelectedIndexChanged += new System.EventHandler(this.list_obras_SelectedIndexChanged);
             // 
             // Finalizadas
             // 
