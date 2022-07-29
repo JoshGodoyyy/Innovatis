@@ -6,7 +6,7 @@ using System.Data;
 
 namespace Innovatis.Obra {
     internal class Cadastro {
-        private static readonly string path = "Data Source=E:\\ws-vs2022\\Innovatis\\Innovatis\\db\\innovatis.db";
+        private static readonly string path = "Data Source=" + Global.pathDatabase;
         private static SQLiteConnection connection;
         private static SQLiteCommand command;
         private static SQLiteDataReader reader;
@@ -112,6 +112,7 @@ namespace Innovatis.Obra {
                 reader = command.ExecuteReader();
                 while(reader.Read()) {
                     Material material = new Material() {
+                        Id = Convert.ToInt32(reader["id"]),
                         IdObra = Convert.ToInt32(reader["id_obra"]),
                         Descricao = Convert.ToString(reader["descricao"]),
                         Data = Convert.ToDateTime(reader["data"]),

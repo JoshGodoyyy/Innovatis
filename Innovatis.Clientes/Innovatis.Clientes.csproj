@@ -73,6 +73,7 @@
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\Cliente.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="Novo.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -60,6 +60,7 @@
     <Compile Include="Finalizadas.Designer.cs">
       <DependentUpon>Finalizadas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Incluir.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -5,7 +5,7 @@ using System;
 
 namespace Innovatis.Clientes {
     public class Cadastro {
-        private static readonly string path = "Data Source=E:\\ws-vs2022\\Innovatis\\Innovatis\\db\\innovatis.db";
+        private static readonly string path = "Data Source=" + Global.pathDatabase;
         private static SQLiteConnection connection;
         private static SQLiteCommand command;
         private static SQLiteDataReader reader;
