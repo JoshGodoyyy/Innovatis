@@ -36,7 +36,6 @@
             this.btn_procurarContrato = new System.Windows.Forms.Button();
             this.txt_contrato = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_clienteNaoCadastrado = new System.Windows.Forms.Button();
             this.cb_cliente = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_cep = new System.Windows.Forms.TextBox();
@@ -165,23 +164,13 @@
             this.label7.TabIndex = 45;
             this.label7.Text = "Contrato:";
             // 
-            // btn_clienteNaoCadastrado
-            // 
-            this.btn_clienteNaoCadastrado.Location = new System.Drawing.Point(318, 101);
-            this.btn_clienteNaoCadastrado.Name = "btn_clienteNaoCadastrado";
-            this.btn_clienteNaoCadastrado.Size = new System.Drawing.Size(152, 23);
-            this.btn_clienteNaoCadastrado.TabIndex = 36;
-            this.btn_clienteNaoCadastrado.Text = "Não Cadastrado";
-            this.btn_clienteNaoCadastrado.UseVisualStyleBackColor = true;
-            this.btn_clienteNaoCadastrado.Click += new System.EventHandler(this.btn_clienteNaoCadastrado_Click);
-            // 
             // cb_cliente
             // 
             this.cb_cliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_cliente.FormattingEnabled = true;
             this.cb_cliente.Location = new System.Drawing.Point(12, 103);
             this.cb_cliente.Name = "cb_cliente";
-            this.cb_cliente.Size = new System.Drawing.Size(300, 21);
+            this.cb_cliente.Size = new System.Drawing.Size(458, 21);
             this.cb_cliente.TabIndex = 34;
             // 
             // label6
@@ -302,7 +291,6 @@
             this.Controls.Add(this.btn_procurarContrato);
             this.Controls.Add(this.txt_contrato);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btn_clienteNaoCadastrado);
             this.Controls.Add(this.cb_cliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_cep);
@@ -342,7 +330,6 @@
         private System.Windows.Forms.Button btn_procurarContrato;
         private System.Windows.Forms.TextBox txt_contrato;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btn_clienteNaoCadastrado;
         private System.Windows.Forms.ComboBox cb_cliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_cep;

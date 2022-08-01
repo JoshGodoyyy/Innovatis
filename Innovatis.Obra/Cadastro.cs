@@ -193,6 +193,40 @@ namespace Innovatis.Obra {
                 command.ExecuteNonQuery();
             }
         }
+
+        public static DataTable SelecionarObra(int id) {
+            using(connection = new SQLiteConnection(path)) {
+                DataTable data = new DataTable();
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "select * from obras where id = @id";
+                command.Parameters.AddWithValue("id", id);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+                adapter.Fill(data);
+                return data;
+            }
+        }
+        public static void EditarObra(Entity.Obra obra) {
+            using(connection = new SQLiteConnection(path)) {
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = "update obras set logradouro = @logradouro, numero = @numero, bairro = @bairro, cidade = @cidade, cep = @cep, id_cliente = @id_cliente, valorcontrato = @valorcontrato, valormaterial = @valormaterial, datainicio = @datainicio, datafinal = @datafinal where id = @id";
+                command.Parameters.AddWithValue("logradouro", obra.Logradouro);
+                command.Parameters.AddWithValue("numero", obra.Numero);
+                command.Parameters.AddWithValue("bairro", obra.Bairro);
+                command.Parameters.AddWithValue("cidade", obra.Cidade);
+                command.Parameters.AddWithValue("cep", obra.CEP);
+                command.Parameters.AddWithValue("id_cliente", obra.IdCliente);
+                command.Parameters.AddWithValue("valorcontrato", obra.ValorContrato);
+                command.Parameters.AddWithValue("valormaterial", obra.ValorMaterial);
+                command.Parameters.AddWithValue("datainicio", obra.DataInicio);
+                command.Parameters.AddWithValue("datafinal", obra.DataFinal);
+                command.Parameters.AddWithValue("id", obra.Id);
+
+                command.ExecuteNonQuery();
+                
+            }
+        }
         #endregion
     }
 }

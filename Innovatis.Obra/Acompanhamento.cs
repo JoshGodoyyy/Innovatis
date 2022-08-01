@@ -6,7 +6,6 @@ using System.Data;
 
 namespace Innovatis.Obra {
     public partial class Acompanhamento : Form {
-        private int id;
         public Acompanhamento() {
             InitializeComponent();
             Listar();
@@ -25,6 +24,8 @@ namespace Innovatis.Obra {
         private void list_obras_SelectedIndexChanged(object sender, System.EventArgs e) {
             var aux = list_obras.SelectedValue;
             if(list_obras.SelectedValue != aux) {
+                DesabilitarCampos();
+                LimparCampos();
                 try {
                     List<Material> materiais = new List<Material>();
                     materiais = Cadastro.ListarMateriais(int.Parse(list_obras.SelectedValue.ToString()));
@@ -78,7 +79,7 @@ namespace Innovatis.Obra {
                 HabilitarCampos();
                 DataTable data = new DataTable();
                 data = Cadastro.SelecionarMaterial(int.Parse(list_historico.SelectedValue.ToString()));
-
+                int id;
                 foreach(DataRow i in data.Rows) {
                     id = int.Parse(i["id"].ToString());
                     txt_descricao.Text = i["descricao"].ToString();
@@ -150,6 +151,11 @@ namespace Innovatis.Obra {
             DialogResult dialogResult = MessageBox.Show("Deseja mesmo marcar obra como finalizada?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes) Cadastro.FinalizarObra(int.Parse(list_obras.SelectedValue.ToString()), DateTime.Now);
             Listar();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e) {
+            Nova nova = new Nova(int.Parse(list_obras.SelectedValue.ToString()));
+            nova.ShowDialog();
         }
     }
 }

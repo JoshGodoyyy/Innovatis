@@ -41,6 +41,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.obraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarObraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_remover = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbl_dataFinal = new System.Windows.Forms.Label();
@@ -208,7 +209,8 @@
             // obraToolStripMenuItem
             // 
             this.obraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.finalizarObraToolStripMenuItem});
+            this.finalizarObraToolStripMenuItem,
+            this.editarToolStripMenuItem});
             this.obraToolStripMenuItem.Name = "obraToolStripMenuItem";
             this.obraToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.obraToolStripMenuItem.Text = "Obra";
@@ -219,6 +221,13 @@
             this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.finalizarObraToolStripMenuItem.Text = "Finalizar obra";
             this.finalizarObraToolStripMenuItem.Click += new System.EventHandler(this.finalizarObraToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // btn_remover
             // 
@@ -476,5 +485,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbl_moContratada;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
     }
 }
