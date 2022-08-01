@@ -61,6 +61,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_valorContratoMaterial = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cb_fornecedor = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -69,9 +71,9 @@
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(116, 350);
+            this.btn_editar.Location = new System.Drawing.Point(149, 361);
             this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(108, 23);
+            this.btn_editar.Size = new System.Drawing.Size(75, 23);
             this.btn_editar.TabIndex = 8;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
@@ -95,15 +97,15 @@
             // 
             // txt_nota
             // 
-            this.txt_nota.Location = new System.Drawing.Point(116, 324);
+            this.txt_nota.Location = new System.Drawing.Point(12, 363);
             this.txt_nota.Name = "txt_nota";
-            this.txt_nota.Size = new System.Drawing.Size(189, 20);
+            this.txt_nota.Size = new System.Drawing.Size(131, 20);
             this.txt_nota.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(116, 308);
+            this.label4.Location = new System.Drawing.Point(12, 347);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 23;
@@ -218,20 +220,20 @@
             // finalizarObraToolStripMenuItem
             // 
             this.finalizarObraToolStripMenuItem.Name = "finalizarObraToolStripMenuItem";
-            this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.finalizarObraToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.finalizarObraToolStripMenuItem.Text = "Finalizar obra";
             this.finalizarObraToolStripMenuItem.Click += new System.EventHandler(this.finalizarObraToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // btn_remover
             // 
-            this.btn_remover.Location = new System.Drawing.Point(230, 350);
+            this.btn_remover.Location = new System.Drawing.Point(230, 361);
             this.btn_remover.Name = "btn_remover";
             this.btn_remover.Size = new System.Drawing.Size(75, 23);
             this.btn_remover.TabIndex = 9;
@@ -408,11 +410,31 @@
             this.label6.TabIndex = 31;
             this.label6.Text = "Material Contratado: R$";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(116, 307);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 13);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Fornecedor:";
+            // 
+            // cb_fornecedor
+            // 
+            this.cb_fornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_fornecedor.FormattingEnabled = true;
+            this.cb_fornecedor.Location = new System.Drawing.Point(116, 323);
+            this.cb_fornecedor.Name = "cb_fornecedor";
+            this.cb_fornecedor.Size = new System.Drawing.Size(189, 21);
+            this.cb_fornecedor.TabIndex = 32;
+            // 
             // Acompanhamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 385);
+            this.ClientSize = new System.Drawing.Size(570, 396);
+            this.Controls.Add(this.cb_fornecedor);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btn_remover);
             this.Controls.Add(this.btn_editar);
@@ -486,5 +508,7 @@
         private System.Windows.Forms.Label lbl_moContratada;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cb_fornecedor;
     }
 }

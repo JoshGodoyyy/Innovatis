@@ -13,7 +13,7 @@ namespace Innovatis.Obra {
 
         private void Listar() {
             List<Entity.Obra> obras = new List<Entity.Obra>();
-            obras = Cadastro.Relatorio(id);
+            obras = Obras.Relatorio(id);
 
             double contratoMO = 0
                 , contratoMaterial = 0;
@@ -31,7 +31,7 @@ namespace Innovatis.Obra {
             lbl_valorMaterial.Text = contratoMaterial.ToString("N2");
 
             List<Entity.Material> materiais = new List<Entity.Material>();
-            materiais = Cadastro.ListarMateriais(id);
+            materiais = Historicos.ListarMateriais(id);
             dt_itens.DataSource = materiais;
 
             dt_itens.Columns[0].Visible = false;

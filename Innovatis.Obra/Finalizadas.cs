@@ -12,7 +12,7 @@ namespace Innovatis.Obra {
         private void ListarObras() {
             try {
                 List<Entity.Obra> obras = new List<Entity.Obra>();
-                obras = Cadastro.ListarObras(1);
+                obras = Obras.ListarObras(1);
 
                 list_obras.DataSource = obras;
                 list_obras.DisplayMember = "logradouro";

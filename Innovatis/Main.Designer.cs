@@ -25,30 +25,46 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_fornecedores = new System.Windows.Forms.Button();
             this.btn_novoCliente = new System.Windows.Forms.Button();
             this.btn_materiais = new System.Windows.Forms.Button();
             this.btn_obrasEmAndamento = new System.Windows.Forms.Button();
             this.btn_obrasConcluidas = new System.Windows.Forms.Button();
             this.btn_clientes = new System.Windows.Forms.Button();
             this.btn_novaObra = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_fornecedores);
             this.panel1.Controls.Add(this.btn_novoCliente);
             this.panel1.Controls.Add(this.btn_materiais);
             this.panel1.Controls.Add(this.btn_obrasEmAndamento);
             this.panel1.Controls.Add(this.btn_obrasConcluidas);
             this.panel1.Controls.Add(this.btn_clientes);
             this.panel1.Controls.Add(this.btn_novaObra);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1184, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_fornecedores
+            // 
+            this.btn_fornecedores.Image = global::Innovatis.Properties.Resources.Fornecedor;
+            this.btn_fornecedores.Location = new System.Drawing.Point(626, 3);
+            this.btn_fornecedores.Name = "btn_fornecedores";
+            this.btn_fornecedores.Size = new System.Drawing.Size(94, 94);
+            this.btn_fornecedores.TabIndex = 6;
+            this.btn_fornecedores.Text = "Fornecedores";
+            this.btn_fornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_fornecedores.UseVisualStyleBackColor = true;
+            this.btn_fornecedores.Click += new System.EventHandler(this.btn_fornecedores_Click);
             // 
             // btn_novoCliente
             // 
@@ -128,6 +144,14 @@
             this.btn_novaObra.UseVisualStyleBackColor = true;
             this.btn_novaObra.Click += new System.EventHandler(this.btn_novaObra_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(619, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1, 94);
+            this.panel3.TabIndex = 2;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
@@ -167,6 +191,8 @@
         private System.Windows.Forms.Button btn_obrasEmAndamento;
         private System.Windows.Forms.Button btn_obrasConcluidas;
         private System.Windows.Forms.Button btn_materiais;
+        private System.Windows.Forms.Button btn_fornecedores;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

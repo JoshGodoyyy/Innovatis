@@ -88,6 +88,12 @@
         "Entry"
         {
         "MsmKey" = "8:_729100CC08F0C6B0467AE481F11DD4B3"
+        "OwnerKey" = "8:_8AB80F11681E4649B18D3663B2C80F01"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_729100CC08F0C6B0467AE481F11DD4B3"
         "OwnerKey" = "8:_D99BDD2C98A34070979816233B538C04"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -123,8 +129,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8AB80F11681E4649B18D3663B2C80F01"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8FD8613427E6D392501F95C1DE41C721"
         "OwnerKey" = "8:_55C9331BB2702C167373867DE93FF602"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8FD8613427E6D392501F95C1DE41C721"
+        "OwnerKey" = "8:_8AB80F11681E4649B18D3663B2C80F01"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -251,6 +269,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C8C2BDA0327542C984A82D4A23F259B0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8AB80F11681E4649B18D3663B2C80F01"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -975,7 +999,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Innovatis"
         "ProductCode" = "8:{B40A779E-4A52-47FD-B2D3-F506967C3949}"
-        "PackageCode" = "8:{719CA806-0BE9-40E8-A7A9-8423389722AF}"
+        "PackageCode" = "8:{72860352-B526-411D-B28F-FF5B8DAC7D0F}"
         "UpgradeCode" = "8:{067CD121-19FD-4E50-ACD1-808BC2157B25}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -1746,6 +1770,34 @@
                 {
                 }
             }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8AB80F11681E4649B18D3663B2C80F01"
+            {
+            "SourcePath" = "8:..\\..\\..\\Innovatis.Fornecedores\\obj\\Debug\\Innovatis.Fornecedores.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_EF75CC5A1E0147E39C09ED6B473A273C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{CCDDF7BF-80F1-43EF-982F-373D9636D509}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_921EE57F49EF4636AE8592F00C06AAEC"
             {
             "SourcePath" = "8:"
@@ -1769,6 +1821,34 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:ReferenceCopyLocalPaths"
             "OutputProjectGuid" = "8:{B59F4901-2C10-470E-B28A-514847C22B5A}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_AA18A86F83134ABAB04C295731AC6FB6"
+            {
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_EF75CC5A1E0147E39C09ED6B473A273C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:ReferenceCopyLocalPaths"
+            "OutputProjectGuid" = "8:{CCDDF7BF-80F1-43EF-982F-373D9636D509}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

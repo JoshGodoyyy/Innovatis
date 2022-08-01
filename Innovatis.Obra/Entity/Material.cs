@@ -7,5 +7,6 @@
         public double Valor { get; set; }
         public string Nota { get; set; }
         public string LocalEntrega { get; set; }
+        public string Fornecedor { get; set; }
     }
 }

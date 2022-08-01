@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Innovatis.Clientes;
 using Innovatis.Obra;
+using Innovatis.Fornecedores;
 
 namespace Innovatis {
     public partial class Main : Form {
@@ -40,7 +41,7 @@ namespace Innovatis {
 
         private void btn_novoCliente_Click(object sender, EventArgs e) {
             Form formOpenned = Application.OpenForms["Novo"];
-            if(formOpenned == null) formOpenned = new Novo();
+            if(formOpenned == null) formOpenned = new Clientes.Novo();
             formOpenned.MdiParent = this;
             formOpenned.Show();
         }
@@ -48,6 +49,13 @@ namespace Innovatis {
         private void btn_materiais_Click(object sender, EventArgs e) {
             Form formOpenned = Application.OpenForms["Incluir"];
             if(formOpenned == null) formOpenned = new Incluir();
+            formOpenned.MdiParent = this;
+            formOpenned.Show();
+        }
+
+        private void btn_fornecedores_Click(object sender, EventArgs e) {
+            Form formOpenned = Application.OpenForms["Novo"];
+            if(formOpenned == null) formOpenned = new Fornecedores.Novo();
             formOpenned.MdiParent = this;
             formOpenned.Show();
         }

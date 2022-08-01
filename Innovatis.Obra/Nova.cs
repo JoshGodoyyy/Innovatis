@@ -16,7 +16,7 @@ namespace Innovatis.Obra {
             Id = id;
             Text = "Editar obra";
             DataTable obra = new DataTable();
-            obra = Cadastro.SelecionarObra(Id);
+            obra = Obras.SelecionarObra(Id);
 
             foreach(DataRow i in obra.Rows) {
                 txt_logradouro.Text = i["logradouro"].ToString();
@@ -70,7 +70,7 @@ namespace Innovatis.Obra {
             if(btn_finalizar.Text == "Editar") {
                 try {
                     obra.Id = Id;
-                    Cadastro.EditarObra(obra);
+                    Obras.EditarObra(obra);
                     DialogResult dialog = MessageBox.Show("Obra alterada com sucesso", ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if(dialog == DialogResult.OK) Close();
                 } catch(Exception ex) {
@@ -78,7 +78,7 @@ namespace Innovatis.Obra {
                 }
             } else {
                 try {
-                    Cadastro.InsertData(obra);
+                    Obras.NovaObra(obra);
                 } catch(Exception ex) {
                     MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

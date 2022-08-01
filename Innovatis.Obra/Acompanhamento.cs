@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System;
 using Innovatis.Obra.Entity;
 using System.Data;
+using Innovatis.Fornecedores.Entity;
 
 namespace Innovatis.Obra {
     public partial class Acompanhamento : Form {
@@ -14,11 +15,17 @@ namespace Innovatis.Obra {
 
         private void Listar() {
             List<Entity.Obra> obras = new List<Entity.Obra>();
-            obras = Cadastro.ListarObras(0);
+            obras = Obras.ListarObras(0);
 
             list_obras.DataSource = obras;
             list_obras.DisplayMember = "logradouro";
             list_obras.ValueMember = "id";
+
+            List<Fornecedor> fornecedores = new List<Fornecedor>();
+            fornecedores = Fornecedores.Cadastro.Listar();
+            cb_fornecedor.DataSource = fornecedores;
+            cb_fornecedor.DisplayMember = "nome";
+            cb_fornecedor.ValueMember = "id";
         }
 
         private void list_obras_SelectedIndexChanged(object sender, System.EventArgs e) {
@@ -28,14 +35,14 @@ namespace Innovatis.Obra {
                 LimparCampos();
                 try {
                     List<Material> materiais = new List<Material>();
-                    materiais = Cadastro.ListarMateriais(int.Parse(list_obras.SelectedValue.ToString()));
+                    materiais = Historicos.ListarMateriais(int.Parse(list_obras.SelectedValue.ToString()));
 
                     list_historico.DataSource = materiais;
                     list_historico.DisplayMember = "descricao";
                     list_historico.ValueMember = "id";
 
                     List<Entity.Obra> obras = new List<Entity.Obra>();
-                    obras = Cadastro.ListarObrasById(int.Parse(list_obras.SelectedValue.ToString()));
+                    obras = Obras.ListarObrasById(int.Parse(list_obras.SelectedValue.ToString()));
 
                     double valMO = 0;
                     double valMat = 0;
@@ -78,7 +85,7 @@ namespace Innovatis.Obra {
             if(list_historico.SelectedValue != aux) {
                 HabilitarCampos();
                 DataTable data = new DataTable();
-                data = Cadastro.SelecionarMaterial(int.Parse(list_historico.SelectedValue.ToString()));
+                data = Historicos.SelecionarMaterial(int.Parse(list_historico.SelectedValue.ToString()));
                 int id;
                 foreach(DataRow i in data.Rows) {
                     id = int.Parse(i["id"].ToString());
@@ -87,6 +94,7 @@ namespace Innovatis.Obra {
                     txt_valor.Text = i["valor"].ToString();
                     txt_nota.Text = i["nota"].ToString();
                     txt_local.Text = i["local_entrega"].ToString();
+                    cb_fornecedor.Text = i["fornecedor"].ToString();
                 }
             }
         }
@@ -99,10 +107,11 @@ namespace Innovatis.Obra {
                     Data = DateTime.Parse(dt_data.Text),
                     Valor = double.Parse(txt_valor.Text),
                     Nota = txt_nota.Text,
-                    LocalEntrega = txt_local.Text
+                    LocalEntrega = txt_local.Text,
+                    Fornecedor = cb_fornecedor.Text
                 };
 
-                Cadastro.EditarPedido(material);
+                Historicos.EditarPedido(material);
             } catch(Exception ex) {
                 MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -112,7 +121,7 @@ namespace Innovatis.Obra {
         private void btn_remover_Click(object sender, EventArgs e) {
             try {
                 DialogResult dialogResult = MessageBox.Show("Deseja mesmo apagar este item?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if(dialogResult == DialogResult.Yes) Cadastro.RemoverPedido(int.Parse(list_historico.SelectedValue.ToString()));
+                if(dialogResult == DialogResult.Yes) Historicos.RemoverPedido(int.Parse(list_historico.SelectedValue.ToString()));
             } catch(Exception ex) {
                 MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -126,6 +135,7 @@ namespace Innovatis.Obra {
             dt_data.Enabled = true;
             btn_editar.Enabled = true;
             btn_remover.Enabled = true;
+            cb_fornecedor.Enabled = true;
         }
 
         private void DesabilitarCampos() {
@@ -136,6 +146,7 @@ namespace Innovatis.Obra {
             dt_data.Enabled = false;
             btn_editar.Enabled = false;
             btn_remover.Enabled = false;
+            cb_fornecedor.Enabled = false;
             LimparCampos();
         }
 
@@ -149,7 +160,7 @@ namespace Innovatis.Obra {
 
         private void finalizarObraToolStripMenuItem_Click(object sender, EventArgs e) {
             DialogResult dialogResult = MessageBox.Show("Deseja mesmo marcar obra como finalizada?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes) Cadastro.FinalizarObra(int.Parse(list_obras.SelectedValue.ToString()), DateTime.Now);
+            if (dialogResult == DialogResult.Yes) Obras.FinalizarObra(int.Parse(list_obras.SelectedValue.ToString()), DateTime.Now);
             Listar();
         }
 

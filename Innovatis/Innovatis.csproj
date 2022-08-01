@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\Fornecedor.png" />
     <None Include="Resources\helmet.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\refresh.ico" />
@@ -135,6 +136,10 @@
     <ProjectReference Include="..\Innovatis.Clientes\Innovatis.Clientes.csproj">
       <Project>{b59f4901-2c10-470e-b28a-514847c22b5a}</Project>
       <Name>Innovatis.Clientes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Innovatis.Fornecedores\Innovatis.Fornecedores.csproj">
+      <Project>{ccddf7bf-80f1-43ef-982f-373d9636d509}</Project>
+      <Name>Innovatis.Fornecedores</Name>
     </ProjectReference>
     <ProjectReference Include="..\Innovatis.Obra\Innovatis.Obra.csproj">
       <Project>{41093d26-b774-46aa-8a27-a08c55e5b28e}</Project>
