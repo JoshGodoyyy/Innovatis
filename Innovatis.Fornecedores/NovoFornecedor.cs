@@ -5,8 +5,8 @@ using System.Data;
 using System.Windows.Forms;
 
 namespace Innovatis.Fornecedores {
-    public partial class Novo : Form {
-        public Novo() {
+    public partial class NovoFornecedor : Form {
+        public NovoFornecedor() {
             InitializeComponent();
             Listar();
         }

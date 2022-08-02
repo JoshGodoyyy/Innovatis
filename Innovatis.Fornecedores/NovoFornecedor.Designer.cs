@@ -1,5 +1,5 @@
 ﻿namespace Innovatis.Fornecedores {
-    partial class Novo {
+    partial class NovoFornecedor {
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>
