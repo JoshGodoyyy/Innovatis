@@ -131,5 +131,9 @@ namespace Innovatis.Clientes {
         private void atualizarToolStripMenuItem_Click(object sender, EventArgs e) {
             Listar();
         }
+
+        private void salvarComoPDFToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
     }
 }

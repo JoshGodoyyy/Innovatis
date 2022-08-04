@@ -20,6 +20,7 @@ namespace Innovatis {
                 login.Show();
                 panel1.Enabled = false;
                 menuToolStripMenuItem.Enabled = false;
+                Global.Acesso = "Desconectado";
                 lbl_usuario.Text = "Desconectado";
                 lbl_funcao.Text = "";
             }
@@ -85,8 +86,21 @@ namespace Innovatis {
                 DialogResult dialog = MessageBox.Show("Deseja mesmo sair?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(dialog == DialogResult.Yes) {
                     Global.logado = false;
+                    Global.Acesso = "Desconectado";
+                    lbl_usuario.Text = "Desconectado";
                     Conexao();
                 }
+            }
+        }
+
+        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e) {
+            if(Global.logado) {
+                if(Global.Acesso == Funcao.Administrador.ToString()) {
+                    Form formOpen = Application.OpenForms["Configuracoes"];
+                    if(formOpen == null) formOpen = new Configuracoes();
+                    formOpen.MdiParent = this;
+                    formOpen.Show();
+                } else MessageBox.Show("Você não tem permissão para acessar as configurações", ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

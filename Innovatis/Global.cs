@@ -5,5 +5,6 @@
         public static string database = "innovatis.db";
         public static string pathDatabase = path + @"\db\" + database;
         public static bool logado = false;
+        public static string Acesso = "Desconectado";
     }
 }

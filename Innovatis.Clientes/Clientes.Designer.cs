@@ -26,6 +26,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarComoPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dt_clientes = new System.Windows.Forms.DataGridView();
             this.btn_remover = new System.Windows.Forms.Button();
             this.btn_salvar = new System.Windows.Forms.Button();
@@ -59,8 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.salvarComoPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_clientes)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -85,6 +85,22 @@
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // salvarComoPDFToolStripMenuItem
+            // 
+            this.salvarComoPDFToolStripMenuItem.Image = global::Innovatis.Clientes.Properties.Resources.save_as;
+            this.salvarComoPDFToolStripMenuItem.Name = "salvarComoPDFToolStripMenuItem";
+            this.salvarComoPDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salvarComoPDFToolStripMenuItem.Text = "&Salvar como PDF";
+            this.salvarComoPDFToolStripMenuItem.Click += new System.EventHandler(this.salvarComoPDFToolStripMenuItem_Click);
+            // 
+            // atualizarToolStripMenuItem
+            // 
+            this.atualizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atualizarToolStripMenuItem.Image")));
+            this.atualizarToolStripMenuItem.Name = "atualizarToolStripMenuItem";
+            this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.atualizarToolStripMenuItem.Text = "&Atualizar";
+            this.atualizarToolStripMenuItem.Click += new System.EventHandler(this.atualizarToolStripMenuItem_Click);
             // 
             // dt_clientes
             // 
@@ -393,21 +409,6 @@
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
-            // 
-            // salvarComoPDFToolStripMenuItem
-            // 
-            this.salvarComoPDFToolStripMenuItem.Image = global::Innovatis.Clientes.Properties.Resources.save_as;
-            this.salvarComoPDFToolStripMenuItem.Name = "salvarComoPDFToolStripMenuItem";
-            this.salvarComoPDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salvarComoPDFToolStripMenuItem.Text = "&Salvar como PDF";
-            // 
-            // atualizarToolStripMenuItem
-            // 
-            this.atualizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atualizarToolStripMenuItem.Image")));
-            this.atualizarToolStripMenuItem.Name = "atualizarToolStripMenuItem";
-            this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.atualizarToolStripMenuItem.Text = "&Atualizar";
-            this.atualizarToolStripMenuItem.Click += new System.EventHandler(this.atualizarToolStripMenuItem_Click);
             // 
             // Clientes
             // 
