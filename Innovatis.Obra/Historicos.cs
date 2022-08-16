@@ -6,7 +6,7 @@ using System.Data.SQLite;
 
 namespace Innovatis.Obra {
     internal class Historicos {
-        private static readonly string path = "Data Source=" + Global.pathDatabase;
+        private static string path = "Data Source=" + Global.pathDatabase;
         private static SQLiteConnection connection;
         private static SQLiteCommand command;
         private static SQLiteDataReader reader;
@@ -65,8 +65,6 @@ namespace Innovatis.Obra {
                 return material;
             }
         }
-
-
 
         public static void EditarPedido(Material material) {
             using(connection = new SQLiteConnection(path)) {

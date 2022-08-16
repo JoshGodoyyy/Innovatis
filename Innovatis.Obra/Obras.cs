@@ -5,7 +5,7 @@ using System.Data.SQLite;
 
 namespace Innovatis.Obra {
     internal class Obras {
-        private static readonly string path = "Data Source=" + Global.pathDatabase;
+        private static string path = "Data Source=" + Global.pathDatabase;
         private static SQLiteConnection connection;
         private static SQLiteCommand command;
         private static SQLiteDataReader reader;

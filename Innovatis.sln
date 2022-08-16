@@ -13,6 +13,10 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Install", "Innovatis\Instal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovatis.Fornecedores", "Innovatis.Fornecedores\Innovatis.Fornecedores.csproj", "{CCDDF7BF-80F1-43EF-982F-373D9636D509}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovatis.Funcionarios", "Innovatis.Funcionarios\Innovatis.Funcionarios.csproj", "{284236E6-8273-4885-BD2D-8732BE712288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovatis.Almoxarifado", "Innovatis.Almoxarifado\Innovatis.Almoxarifado.csproj", "{2CBFC733-04AC-4CF5-BB04-BAD7B31179A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{CCDDF7BF-80F1-43EF-982F-373D9636D509}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCDDF7BF-80F1-43EF-982F-373D9636D509}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCDDF7BF-80F1-43EF-982F-373D9636D509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284236E6-8273-4885-BD2D-8732BE712288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284236E6-8273-4885-BD2D-8732BE712288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284236E6-8273-4885-BD2D-8732BE712288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284236E6-8273-4885-BD2D-8732BE712288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CBFC733-04AC-4CF5-BB04-BAD7B31179A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CBFC733-04AC-4CF5-BB04-BAD7B31179A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CBFC733-04AC-4CF5-BB04-BAD7B31179A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CBFC733-04AC-4CF5-BB04-BAD7B31179A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

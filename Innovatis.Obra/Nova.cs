@@ -41,7 +41,7 @@ namespace Innovatis.Obra {
                 List<Cliente> clientes = new List<Cliente>();
                 clientes = Clientes.Cadastro.LoadData();
                 cb_cliente.DataSource = clientes;
-                cb_cliente.DisplayMember = "nome";
+                cb_cliente.DisplayMember = "empresa";
                 cb_cliente.ValueMember = "id";
             } catch(Exception ex) {
                 MessageBox.Show(ex.Message, ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);

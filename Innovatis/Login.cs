@@ -26,9 +26,9 @@ namespace Innovatis {
                     Global.Acesso = i.Funcao;
                 }
                 Global.logado = true;
-                main.panel1.Enabled = true;
-                main.menuToolStripMenuItem.Enabled = true;
+                main.ribbon.Enabled = true;
                 main.lbl_funcao.Text = Global.Acesso;
+                main.CriarNos();
                 Close();
             } else {
                 MessageBox.Show("Usuário e/ou senha inválido(s)", ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);

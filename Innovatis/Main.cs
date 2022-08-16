@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using Innovatis.Clientes;
 using Innovatis.Obra;
 using Innovatis.Fornecedores;
+using Innovatis.Almoxarifado;
+using Innovatis.Funcionarios;
 
 namespace Innovatis {
     public partial class Main : Form {
@@ -11,6 +13,7 @@ namespace Innovatis {
             lbl_versao.Text = "V " + Global.Versao;
             timer1.Start();
             Conexao();
+            CriarNos();
         }
 
         public void Conexao() {
@@ -18,11 +21,191 @@ namespace Innovatis {
                 Login login = new Login(this);
                 login.MdiParent = this;
                 login.Show();
-                panel1.Enabled = false;
-                menuToolStripMenuItem.Enabled = false;
+                ribbon.Enabled = false;
                 Global.Acesso = "Desconectado";
                 lbl_usuario.Text = "Desconectado";
                 lbl_funcao.Text = "";
+            }
+        }
+
+        public void CriarNos() {
+            if(Global.logado) {
+                TreeNode raizObra, novaObra, obrasConcluidas,
+                         pedido, raizClientes, andamento,
+                         novoCliente, clientes, raizFornecedores, 
+                         raizAlmoxarifado, raizFuncionarios, presenca, 
+                         novoFuncionario, dadosFuncionarios, manutencao, cestas, configuracoes;
+                switch(Global.Acesso) {
+                    case "Obras":
+                        raizObra = tr_caminhos.Nodes.Add("Obra");
+
+                        novaObra = raizObra.Nodes.Add("Nova Obra");
+                        novaObra.Name = "novaObra";
+                        novaObra.Tag = "novaObra";
+
+                        obrasConcluidas = raizObra.Nodes.Add("Obras Concluidas");
+                        obrasConcluidas.Name = "obrasConcluidas";
+                        obrasConcluidas.Tag = "obrasConcluidas";
+
+                        pedido = raizObra.Nodes.Add("Pedido de Material");
+                        pedido.Name = "pedido";
+                        pedido.Tag = "pedido";
+
+                        andamento = raizObra.Nodes.Add("Obras em Andamento");
+                        andamento.Name = "andamento";
+                        andamento.Tag = "andamento";
+
+                        raizClientes = tr_caminhos.Nodes.Add("Cliente");
+
+                        clientes = raizClientes.Nodes.Add("Clientes");
+                        clientes.Name = "clientes";
+                        clientes.Tag = "clientes";
+
+                        novoCliente = raizClientes.Nodes.Add("Novo Cliente");
+                        novoCliente.Name = "novoCliente";
+                        novoCliente.Tag = "novoCliente";
+
+                        raizFornecedores = tr_caminhos.Nodes.Add("Fornecedores");
+                        raizFornecedores.Name = "raizFornecedores";
+                        raizFornecedores.Tag = "raizFornecedores";
+                        break;
+                    case "Almoxarifado":
+                        break;
+                    case "Administrador":
+                        raizAlmoxarifado = tr_caminhos.Nodes.Add("Almoxarifado");
+                        raizAlmoxarifado.Name = "almoxarifado";
+
+                        manutencao = raizAlmoxarifado.Nodes.Add("Manutenção");
+                        manutencao.Name = "manutencao";
+                        manutencao.Tag = "manutencao";
+
+                        cestas = raizAlmoxarifado.Nodes.Add("Cestas");
+                        cestas.Name = "cestas";
+                        cestas.Tag = "cestas";
+
+                        raizObra = tr_caminhos.Nodes.Add("Obra");
+                        novaObra = raizObra.Nodes.Add("Nova Obra");
+                        novaObra.Name = "novaObra";
+                        novaObra.Tag = "novaObra";
+
+                        obrasConcluidas = raizObra.Nodes.Add("Obras Concluidas");
+                        obrasConcluidas.Name = "obrasConcluidas";
+                        obrasConcluidas.Tag = "obrasConcluidas";
+
+                        pedido = raizObra.Nodes.Add("Pedido de Material");
+                        pedido.Name = "pedido";
+                        pedido.Tag = "pedido";
+
+                        andamento = raizObra.Nodes.Add("Obras em Andamento");
+                        andamento.Name = "andamento";
+                        andamento.Tag = "andamento";
+
+                        raizClientes = tr_caminhos.Nodes.Add("Cliente");
+                        clientes = raizClientes.Nodes.Add("Clientes");
+                        clientes.Name = "clientes";
+                        clientes.Tag = "clientes";
+
+                        novoCliente = raizClientes.Nodes.Add("Novo Cliente");
+                        novoCliente.Name = "novoCliente";
+                        novoCliente.Tag = "novoCliente";
+
+                        raizFornecedores = tr_caminhos.Nodes.Add("Fornecedores");
+                        raizFornecedores.Tag = "raizFornecedores";
+                        raizFornecedores.Name = "raizFornecedores";
+
+                        raizFuncionarios = tr_caminhos.Nodes.Add("Funcionários");
+
+                        dadosFuncionarios = raizFuncionarios.Nodes.Add("Todos os Funcionários");
+                        dadosFuncionarios.Name = "informacoesFuncionario";
+                        dadosFuncionarios.Tag = "informacoesFuncionario";
+
+                        novoFuncionario = raizFuncionarios.Nodes.Add("Incluir Funcionário");
+                        novoFuncionario.Name = "novoFuncionario";
+                        novoFuncionario.Tag = "novoFuncionario";
+
+                        presenca = raizFuncionarios.Nodes.Add("Folha de Presença");
+                        presenca.Name = "presenca";
+                        presenca.Tag = "presenca";
+
+                        configuracoes = tr_caminhos.Nodes.Add("Configurações");
+                        configuracoes.Name = "configuracoes";
+                        configuracoes.Tag = "configuracoes";
+                        break;
+                }
+            }
+        }
+
+        private void tr_caminhos_AfterSelect(object sender, TreeViewEventArgs e) {
+            if(tr_caminhos.SelectedNode.Tag != null) {
+                Form formOpenned;
+                switch(tr_caminhos.SelectedNode.Tag) {
+                    case "novaObra":
+                        formOpenned = Application.OpenForms["Nova"];
+                        if(formOpenned == null) formOpenned = new Nova();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "obrasConcluidas":
+                        formOpenned = Application.OpenForms["Finalizadas"];
+                        if(formOpenned == null) formOpenned = new Finalizadas();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "pedido":
+                        formOpenned = Application.OpenForms["Incluir"];
+                        if(formOpenned == null) formOpenned = new Incluir();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "andamento":
+                        formOpenned = Application.OpenForms["Acompanhamento"];
+                        if(formOpenned == null) formOpenned = new Acompanhamento();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "clientes":
+                        formOpenned = Application.OpenForms["Clientes"];
+                        if(formOpenned == null) formOpenned = new Clientes.Clientes();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "novoCliente":
+                        formOpenned = Application.OpenForms["Novo"];
+                        if(formOpenned == null) formOpenned = new Novo();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "raizFornecedores":
+                        formOpenned = Application.OpenForms["NovoFornecedor"];
+                        if(formOpenned == null) formOpenned = new NovoFornecedor();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "configuracoes":
+                        formOpenned = Application.OpenForms["Configuracoes"];
+                        if(formOpenned == null) formOpenned = new Configuracoes();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "cestas":
+                        formOpenned = Application.OpenForms["Cestas"];
+                        if(formOpenned == null) formOpenned = new Cestas();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "informacoesFuncionario":
+                        formOpenned = Application.OpenForms["TodosFuncionarios"];
+                        if(formOpenned == null) formOpenned = new TodosFuncionarios();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "novoFuncionario":
+                        formOpenned = Application.OpenForms["NovoFuncionario"];
+                        if(formOpenned == null) formOpenned = new NovoFuncionario();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                }
             }
         }
 
@@ -80,7 +263,7 @@ namespace Innovatis {
             lbl_data.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void btn_sair_Click(object sender, EventArgs e) {
             if(Global.logado == false) Close();
             else {
                 DialogResult dialog = MessageBox.Show("Deseja mesmo sair?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -89,18 +272,8 @@ namespace Innovatis {
                     Global.Acesso = "Desconectado";
                     lbl_usuario.Text = "Desconectado";
                     Conexao();
+                    tr_caminhos.Nodes.Clear();
                 }
-            }
-        }
-
-        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e) {
-            if(Global.logado) {
-                if(Global.Acesso == Funcao.Administrador.ToString()) {
-                    Form formOpen = Application.OpenForms["Configuracoes"];
-                    if(formOpen == null) formOpen = new Configuracoes();
-                    formOpen.MdiParent = this;
-                    formOpen.Show();
-                } else MessageBox.Show("Você não tem permissão para acessar as configurações", ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }
