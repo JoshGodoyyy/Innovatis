@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Innovatis.Funcionarios {
@@ -13,7 +10,7 @@ namespace Innovatis.Funcionarios {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TodosFuncionarios());
+            //Application.Run(new TodosFuncionarios());
         }
     }
 }

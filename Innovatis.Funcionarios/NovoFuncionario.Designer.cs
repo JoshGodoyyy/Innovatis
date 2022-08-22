@@ -24,37 +24,33 @@
         /// </summary>
         private void InitializeComponent() {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rb_inativo = new System.Windows.Forms.RadioButton();
-            this.rb_ativo = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.dt_aso = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_rg = new System.Windows.Forms.TextBox();
-            this.rb_nr = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.rb_registrado = new System.Windows.Forms.RadioButton();
             this.txt_cpf = new System.Windows.Forms.TextBox();
             this.txt_empresa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_salvar = new System.Windows.Forms.Button();
+            this.chk_registrado = new System.Windows.Forms.CheckBox();
+            this.chk_ativo = new System.Windows.Forms.CheckBox();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.rb_inativo);
-            this.groupBox3.Controls.Add(this.rb_ativo);
+            this.groupBox3.Controls.Add(this.chk_ativo);
+            this.groupBox3.Controls.Add(this.chk_registrado);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txt_nome);
             this.groupBox3.Controls.Add(this.dt_aso);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.txt_rg);
-            this.groupBox3.Controls.Add(this.rb_nr);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.rb_registrado);
             this.groupBox3.Controls.Add(this.txt_cpf);
             this.groupBox3.Controls.Add(this.txt_empresa);
             this.groupBox3.Controls.Add(this.label4);
@@ -64,28 +60,6 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados";
-            // 
-            // rb_inativo
-            // 
-            this.rb_inativo.AutoSize = true;
-            this.rb_inativo.Location = new System.Drawing.Point(214, 149);
-            this.rb_inativo.Name = "rb_inativo";
-            this.rb_inativo.Size = new System.Drawing.Size(57, 17);
-            this.rb_inativo.TabIndex = 8;
-            this.rb_inativo.TabStop = true;
-            this.rb_inativo.Text = "Inativo";
-            this.rb_inativo.UseVisualStyleBackColor = true;
-            // 
-            // rb_ativo
-            // 
-            this.rb_ativo.AutoSize = true;
-            this.rb_ativo.Location = new System.Drawing.Point(159, 149);
-            this.rb_ativo.Name = "rb_ativo";
-            this.rb_ativo.Size = new System.Drawing.Size(49, 17);
-            this.rb_ativo.TabIndex = 7;
-            this.rb_ativo.TabStop = true;
-            this.rb_ativo.Text = "Ativo";
-            this.rb_ativo.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -137,17 +111,6 @@
             this.txt_rg.Size = new System.Drawing.Size(147, 20);
             this.txt_rg.TabIndex = 1;
             // 
-            // rb_nr
-            // 
-            this.rb_nr.AutoSize = true;
-            this.rb_nr.Location = new System.Drawing.Point(241, 111);
-            this.rb_nr.Name = "rb_nr";
-            this.rb_nr.Size = new System.Drawing.Size(46, 17);
-            this.rb_nr.TabIndex = 5;
-            this.rb_nr.TabStop = true;
-            this.rb_nr.Text = "N/R";
-            this.rb_nr.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -156,17 +119,6 @@
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "CPF:";
-            // 
-            // rb_registrado
-            // 
-            this.rb_registrado.AutoSize = true;
-            this.rb_registrado.Location = new System.Drawing.Point(159, 111);
-            this.rb_registrado.Name = "rb_registrado";
-            this.rb_registrado.Size = new System.Drawing.Size(76, 17);
-            this.rb_registrado.TabIndex = 4;
-            this.rb_registrado.TabStop = true;
-            this.rb_registrado.Text = "Registrado";
-            this.rb_registrado.UseVisualStyleBackColor = true;
             // 
             // txt_cpf
             // 
@@ -201,6 +153,26 @@
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
+            // chk_registrado
+            // 
+            this.chk_registrado.AutoSize = true;
+            this.chk_registrado.Location = new System.Drawing.Point(159, 112);
+            this.chk_registrado.Name = "chk_registrado";
+            this.chk_registrado.Size = new System.Drawing.Size(77, 17);
+            this.chk_registrado.TabIndex = 12;
+            this.chk_registrado.Text = "Registrado";
+            this.chk_registrado.UseVisualStyleBackColor = true;
+            // 
+            // chk_ativo
+            // 
+            this.chk_ativo.AutoSize = true;
+            this.chk_ativo.Location = new System.Drawing.Point(242, 112);
+            this.chk_ativo.Name = "chk_ativo";
+            this.chk_ativo.Size = new System.Drawing.Size(50, 17);
+            this.chk_ativo.TabIndex = 13;
+            this.chk_ativo.Text = "Ativo";
+            this.chk_ativo.UseVisualStyleBackColor = true;
+            // 
             // NovoFuncionario
             // 
             this.AcceptButton = this.btn_salvar;
@@ -224,20 +196,18 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rb_inativo;
-        private System.Windows.Forms.RadioButton rb_ativo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.DateTimePicker dt_aso;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_rg;
-        private System.Windows.Forms.RadioButton rb_nr;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton rb_registrado;
         private System.Windows.Forms.TextBox txt_cpf;
         private System.Windows.Forms.TextBox txt_empresa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_salvar;
+        private System.Windows.Forms.CheckBox chk_ativo;
+        private System.Windows.Forms.CheckBox chk_registrado;
     }
 }

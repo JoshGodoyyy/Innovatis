@@ -33,22 +33,20 @@
             this.txt_cpf = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_empresa = new System.Windows.Forms.TextBox();
-            this.rb_registrado = new System.Windows.Forms.RadioButton();
-            this.rb_nr = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.dt_aso = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rb_todos = new System.Windows.Forms.RadioButton();
             this.rb_nrs = new System.Windows.Forms.RadioButton();
-            this.rb_restrados = new System.Windows.Forms.RadioButton();
+            this.rb_registrados = new System.Windows.Forms.RadioButton();
             this.txt_pesquisar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rb_inativo = new System.Windows.Forms.RadioButton();
-            this.rb_ativo = new System.Windows.Forms.RadioButton();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_remover = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.chk_registrado = new System.Windows.Forms.CheckBox();
+            this.chk_ativo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,6 +69,7 @@
             this.lst_funcionario.Name = "lst_funcionario";
             this.lst_funcionario.Size = new System.Drawing.Size(194, 95);
             this.lst_funcionario.TabIndex = 0;
+            this.lst_funcionario.SelectedIndexChanged += new System.EventHandler(this.lst_funcionario_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -136,28 +135,6 @@
             this.txt_empresa.Size = new System.Drawing.Size(147, 20);
             this.txt_empresa.TabIndex = 8;
             // 
-            // rb_registrado
-            // 
-            this.rb_registrado.AutoSize = true;
-            this.rb_registrado.Location = new System.Drawing.Point(159, 111);
-            this.rb_registrado.Name = "rb_registrado";
-            this.rb_registrado.Size = new System.Drawing.Size(76, 17);
-            this.rb_registrado.TabIndex = 9;
-            this.rb_registrado.TabStop = true;
-            this.rb_registrado.Text = "Registrado";
-            this.rb_registrado.UseVisualStyleBackColor = true;
-            // 
-            // rb_nr
-            // 
-            this.rb_nr.AutoSize = true;
-            this.rb_nr.Location = new System.Drawing.Point(241, 111);
-            this.rb_nr.Name = "rb_nr";
-            this.rb_nr.Size = new System.Drawing.Size(46, 17);
-            this.rb_nr.TabIndex = 10;
-            this.rb_nr.TabStop = true;
-            this.rb_nr.Text = "N/R";
-            this.rb_nr.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -180,7 +157,7 @@
             // 
             this.groupBox2.Controls.Add(this.rb_todos);
             this.groupBox2.Controls.Add(this.rb_nrs);
-            this.groupBox2.Controls.Add(this.rb_restrados);
+            this.groupBox2.Controls.Add(this.rb_registrados);
             this.groupBox2.Controls.Add(this.txt_pesquisar);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
@@ -193,6 +170,7 @@
             // rb_todos
             // 
             this.rb_todos.AutoSize = true;
+            this.rb_todos.Checked = true;
             this.rb_todos.Location = new System.Drawing.Point(145, 58);
             this.rb_todos.Name = "rb_todos";
             this.rb_todos.Size = new System.Drawing.Size(55, 17);
@@ -200,6 +178,7 @@
             this.rb_todos.TabStop = true;
             this.rb_todos.Text = "Todos";
             this.rb_todos.UseVisualStyleBackColor = true;
+            this.rb_todos.CheckedChanged += new System.EventHandler(this.rb_todos_CheckedChanged);
             // 
             // rb_nrs
             // 
@@ -208,20 +187,20 @@
             this.rb_nrs.Name = "rb_nrs";
             this.rb_nrs.Size = new System.Drawing.Size(46, 17);
             this.rb_nrs.TabIndex = 3;
-            this.rb_nrs.TabStop = true;
             this.rb_nrs.Text = "N/R";
             this.rb_nrs.UseVisualStyleBackColor = true;
+            this.rb_nrs.CheckedChanged += new System.EventHandler(this.rb_nrs_CheckedChanged);
             // 
-            // rb_restrados
+            // rb_registrados
             // 
-            this.rb_restrados.AutoSize = true;
-            this.rb_restrados.Location = new System.Drawing.Point(6, 58);
-            this.rb_restrados.Name = "rb_restrados";
-            this.rb_restrados.Size = new System.Drawing.Size(81, 17);
-            this.rb_restrados.TabIndex = 2;
-            this.rb_restrados.TabStop = true;
-            this.rb_restrados.Text = "Registrados";
-            this.rb_restrados.UseVisualStyleBackColor = true;
+            this.rb_registrados.AutoSize = true;
+            this.rb_registrados.Location = new System.Drawing.Point(6, 58);
+            this.rb_registrados.Name = "rb_registrados";
+            this.rb_registrados.Size = new System.Drawing.Size(81, 17);
+            this.rb_registrados.TabIndex = 2;
+            this.rb_registrados.Text = "Registrados";
+            this.rb_registrados.UseVisualStyleBackColor = true;
+            this.rb_registrados.CheckedChanged += new System.EventHandler(this.rb_registrados_CheckedChanged);
             // 
             // txt_pesquisar
             // 
@@ -229,6 +208,7 @@
             this.txt_pesquisar.Name = "txt_pesquisar";
             this.txt_pesquisar.Size = new System.Drawing.Size(194, 20);
             this.txt_pesquisar.TabIndex = 1;
+            this.txt_pesquisar.TextChanged += new System.EventHandler(this.txt_pesquisar_TextChanged);
             // 
             // label6
             // 
@@ -241,17 +221,15 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.rb_inativo);
-            this.groupBox3.Controls.Add(this.rb_ativo);
+            this.groupBox3.Controls.Add(this.chk_ativo);
+            this.groupBox3.Controls.Add(this.chk_registrado);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txt_nome);
             this.groupBox3.Controls.Add(this.dt_aso);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.txt_rg);
-            this.groupBox3.Controls.Add(this.rb_nr);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.rb_registrado);
             this.groupBox3.Controls.Add(this.txt_cpf);
             this.groupBox3.Controls.Add(this.txt_empresa);
             this.groupBox3.Controls.Add(this.label4);
@@ -262,28 +240,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados";
             // 
-            // rb_inativo
-            // 
-            this.rb_inativo.AutoSize = true;
-            this.rb_inativo.Location = new System.Drawing.Point(214, 149);
-            this.rb_inativo.Name = "rb_inativo";
-            this.rb_inativo.Size = new System.Drawing.Size(57, 17);
-            this.rb_inativo.TabIndex = 16;
-            this.rb_inativo.TabStop = true;
-            this.rb_inativo.Text = "Inativo";
-            this.rb_inativo.UseVisualStyleBackColor = true;
-            // 
-            // rb_ativo
-            // 
-            this.rb_ativo.AutoSize = true;
-            this.rb_ativo.Location = new System.Drawing.Point(159, 149);
-            this.rb_ativo.Name = "rb_ativo";
-            this.rb_ativo.Size = new System.Drawing.Size(49, 17);
-            this.rb_ativo.TabIndex = 15;
-            this.rb_ativo.TabStop = true;
-            this.rb_ativo.Text = "Ativo";
-            this.rb_ativo.UseVisualStyleBackColor = true;
-            // 
             // btn_editar
             // 
             this.btn_editar.Location = new System.Drawing.Point(224, 193);
@@ -292,6 +248,7 @@
             this.btn_editar.TabIndex = 14;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_remover
             // 
@@ -301,6 +258,7 @@
             this.btn_remover.TabIndex = 15;
             this.btn_remover.Text = "Remover";
             this.btn_remover.UseVisualStyleBackColor = true;
+            this.btn_remover.Click += new System.EventHandler(this.btn_remover_Click);
             // 
             // btn_cancelar
             // 
@@ -310,6 +268,27 @@
             this.btn_cancelar.TabIndex = 16;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // chk_registrado
+            // 
+            this.chk_registrado.AutoSize = true;
+            this.chk_registrado.Location = new System.Drawing.Point(159, 112);
+            this.chk_registrado.Name = "chk_registrado";
+            this.chk_registrado.Size = new System.Drawing.Size(77, 17);
+            this.chk_registrado.TabIndex = 13;
+            this.chk_registrado.Text = "Registrado";
+            this.chk_registrado.UseVisualStyleBackColor = true;
+            // 
+            // chk_ativo
+            // 
+            this.chk_ativo.AutoSize = true;
+            this.chk_ativo.Location = new System.Drawing.Point(242, 112);
+            this.chk_ativo.Name = "chk_ativo";
+            this.chk_ativo.Size = new System.Drawing.Size(50, 17);
+            this.chk_ativo.TabIndex = 14;
+            this.chk_ativo.Text = "Ativo";
+            this.chk_ativo.UseVisualStyleBackColor = true;
             // 
             // TodosFuncionarios
             // 
@@ -349,22 +328,20 @@
         private System.Windows.Forms.TextBox txt_cpf;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_empresa;
-        private System.Windows.Forms.RadioButton rb_registrado;
-        private System.Windows.Forms.RadioButton rb_nr;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dt_aso;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rb_todos;
         private System.Windows.Forms.RadioButton rb_nrs;
-        private System.Windows.Forms.RadioButton rb_restrados;
+        private System.Windows.Forms.RadioButton rb_registrados;
         private System.Windows.Forms.TextBox txt_pesquisar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rb_inativo;
-        private System.Windows.Forms.RadioButton rb_ativo;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_remover;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.CheckBox chk_ativo;
+        private System.Windows.Forms.CheckBox chk_registrado;
     }
 }
 

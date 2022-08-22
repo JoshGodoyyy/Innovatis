@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Innovatis.Funcionarios.Entity;
+using System;
 using System.Windows.Forms;
-using Innovatis.Funcionarios.Entity;
 
 namespace Innovatis.Funcionarios {
     public partial class NovoFuncionario : Form {
@@ -25,10 +18,10 @@ namespace Innovatis.Funcionarios {
                     Data = DateTime.Parse(dt_aso.Text)
                 };
 
-                if(rb_registrado.Checked) funcionario.Registrado = true;
+                if(chk_registrado.Checked) funcionario.Registrado = true;
                 else funcionario.Registrado = false;
 
-                if(rb_ativo.Checked) funcionario.Status = true;
+                if(chk_ativo.Checked) funcionario.Status = true;
                 else funcionario.Status = false;
 
                 Banco.Inserir(funcionario);
@@ -43,6 +36,8 @@ namespace Innovatis.Funcionarios {
             txt_rg.Clear();
             txt_cpf.Clear();
             txt_empresa.Clear();
+            chk_registrado.Checked = false;
+            chk_ativo.Checked = false;
             dt_aso.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
     }

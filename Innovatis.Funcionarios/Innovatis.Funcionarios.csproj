@@ -8,7 +8,7 @@
     <ProjectGuid>{284236E6-8273-4885-BD2D-8732BE712288}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Innovatis.Funcionarios</RootNamespace>
-    <AssemblyName>Innovatis.Funcionarios</AssemblyName>
+    <AssemblyName>Funcionarios</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
