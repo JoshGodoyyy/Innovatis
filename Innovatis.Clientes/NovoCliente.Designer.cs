@@ -1,5 +1,5 @@
 ﻿namespace Innovatis.Clientes {
-    partial class Novo {
+    partial class NovoCliente {
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>

@@ -1,5 +1,5 @@
 ﻿namespace Innovatis.Funcionarios.Entity {
-    internal class Funcionario {
+    public class Funcionario {
         public int Id { get; set; }
         public string Nome { get; set; }
         public string RG { get; set; }

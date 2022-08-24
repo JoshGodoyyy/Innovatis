@@ -1,15 +1,11 @@
-﻿using Innovatis.Entities;
+﻿using Innovatis.Clientes.Entity;
 using System;
 using System.Windows.Forms;
 
-namespace Innovatis {
+namespace Innovatis.Clientes {
     public partial class NovoCliente : Form {
         public NovoCliente() {
             InitializeComponent();
-        }
-
-        private void btn_limpar_Click(object sender, EventArgs e) {
-            LimparCampos();
         }
 
         private void btn_salvar_Click(object sender, EventArgs e) {
@@ -29,9 +25,11 @@ namespace Innovatis {
                 CEP = txt_cep.Text,
                 UF = txt_uf.Text
             };
+            Cadastro.InsertData(cliente);
+            LimparCampos();
+        }
 
-
-
+        private void btn_limpar_Click(object sender, EventArgs e) {
             LimparCampos();
         }
 

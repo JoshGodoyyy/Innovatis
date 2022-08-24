@@ -5,6 +5,7 @@ using Innovatis.Obra;
 using Innovatis.Fornecedores;
 using Innovatis.Almoxarifado;
 using Innovatis.Funcionarios;
+using System.Net;
 
 namespace Innovatis {
     public partial class Main : Form {
@@ -14,6 +15,7 @@ namespace Innovatis {
             timer1.Start();
             Conexao();
             CriarNos();
+            lbl_computador.Text = Dns.GetHostName();
         }
 
         public void Conexao() {
@@ -34,7 +36,7 @@ namespace Innovatis {
                          pedido, raizClientes, andamento,
                          novoCliente, clientes, raizFornecedores, 
                          raizAlmoxarifado, raizFuncionarios, presenca, 
-                         novoFuncionario, dadosFuncionarios, manutencao, cestas, configuracoes;
+                         novoFuncionario, dadosFuncionarios, manutencao, cestas, configuracoes, epi;
                 switch(Global.Acesso) {
                     case "Obras":
                         raizObra = tr_caminhos.Nodes.Add("Obra");
@@ -82,6 +84,10 @@ namespace Innovatis {
                         cestas = raizAlmoxarifado.Nodes.Add("Cestas");
                         cestas.Name = "cestas";
                         cestas.Tag = "cestas";
+
+                        epi = raizAlmoxarifado.Nodes.Add("EPIs");
+                        epi.Name = "epis";
+                        epi.Tag = "epis";
 
                         raizObra = tr_caminhos.Nodes.Add("Obra");
                         novaObra = raizObra.Nodes.Add("Nova Obra");
@@ -170,8 +176,8 @@ namespace Innovatis {
                         formOpenned.Show();
                         break;
                     case "novoCliente":
-                        formOpenned = Application.OpenForms["Novo"];
-                        if(formOpenned == null) formOpenned = new Novo();
+                        formOpenned = Application.OpenForms["NovoCliente"];
+                        if(formOpenned == null) formOpenned = new NovoCliente();
                         formOpenned.MdiParent = this;
                         formOpenned.Show();
                         break;
@@ -202,6 +208,12 @@ namespace Innovatis {
                     case "novoFuncionario":
                         formOpenned = Application.OpenForms["NovoFuncionario"];
                         if(formOpenned == null) formOpenned = new NovoFuncionario();
+                        formOpenned.MdiParent = this;
+                        formOpenned.Show();
+                        break;
+                    case "epis":
+                        formOpenned = Application.OpenForms["EPI"];
+                        if(formOpenned == null) formOpenned = new EPI();
                         formOpenned.MdiParent = this;
                         formOpenned.Show();
                         break;
@@ -238,8 +250,8 @@ namespace Innovatis {
         }
 
         private void btn_novoCliente_Click(object sender, EventArgs e) {
-            Form formOpenned = Application.OpenForms["Novo"];
-            if(formOpenned == null) formOpenned = new Novo();
+            Form formOpenned = Application.OpenForms["NovoCliente"];
+            if(formOpenned == null) formOpenned = new NovoCliente();
             formOpenned.MdiParent = this;
             formOpenned.Show();
         }
@@ -268,6 +280,7 @@ namespace Innovatis {
             else {
                 DialogResult dialog = MessageBox.Show("Deseja mesmo sair?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(dialog == DialogResult.Yes) {
+                    foreach(Form i in MdiChildren) i.Close(); 
                     Global.logado = false;
                     Global.Acesso = "Desconectado";
                     lbl_usuario.Text = "Desconectado";

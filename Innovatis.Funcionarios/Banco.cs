@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 
 namespace Innovatis.Funcionarios {
-    internal class Banco {
+    public class Banco {
         private static string database = Global.pathDatabase;
         private static SQLiteConnection connection;
         private static SQLiteCommand command;

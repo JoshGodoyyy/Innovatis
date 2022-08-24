@@ -74,19 +74,19 @@
     </Compile>
     <Compile Include="Entity\Cliente.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="Novo.cs">
+    <Compile Include="NovoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Novo.Designer.cs">
-      <DependentUpon>Novo.cs</DependentUpon>
+    <Compile Include="NovoCliente.Designer.cs">
+      <DependentUpon>NovoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Novo.resx">
-      <DependentUpon>Novo.cs</DependentUpon>
+    <EmbeddedResource Include="NovoCliente.resx">
+      <DependentUpon>NovoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
